@@ -57,3 +57,13 @@ edu-core/
 ## render fetches:
 `https://raw.githubusercontent.com/yourname/cs101-sdcc/main/course.json`
 
+
+### LOCAL TESTING:
+```
+cd ~/proj/edu-core
+python -m http.server 8000
+```
+
+browse to:
+`http://localhost:8000/templates/homepage.html?course=palomar-csit175`
+
