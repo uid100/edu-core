@@ -13,6 +13,7 @@ async function render() {
 
     // Populate college
     setImage("college-logo", data.college.logoPath);
+    console.log(data.college.logoPath);
     setLink("college-link", data.college.website);
 
     // Populate course
@@ -20,6 +21,7 @@ async function render() {
     setText("course-number", data.course.courseNumber);
     setHTML("course-about", data.course.description.join("<br><br>"));
     setImage("cover-image", data.base + data.course.coverImage);
+    console.log(data.base + data.course.coverImage);
 
     // Populate section
     setText("course-term", data.section.term);
@@ -29,6 +31,7 @@ async function render() {
     // Populate textbook
     setImage("textbook-image", data.base + data.textbook.imagePath);
     setText("textbook-title", `${data.textbook.title} (${data.textbook.edition})`);
+    console.log(data.textbook.url);
 
     // Populate instructor
     setText("instructor-name", `${data.instructor.firstName} ${data.instructor.lastName}`);
