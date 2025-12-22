@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/course-content/common/css/style.css">
+    <!-- homepage 
+        <p><iframe src="https://uid100.github.io/course-content/common/homepage.html?path=cuyamaca/cs119" 
+            width="100%" height="1000px" loading="lazy">
+        </iframe></p>
+    -->
+</head>
+
+<body>
+    <div id="top">
+        <div id="page-header">
+            <div class="row">
+                <div class="col-6 text-start">
+                        <a id="college-link" href="#" target="_blank">
+                        <img id="college-logo" class="logo" src="" alt="College Logo" />
+                    </a> <!-- #college-link -->
+                </div> <!-- .col-6 -->
+                <div class="col-6 text-end">
+                    <figure><img id="cover-image" src="" alt="cover page image" />
+                    </figure>
+                </div> <!-- .col-6 -->
+            </div> <!-- .row -->
+            <div class="row">
+                <div class="timeline">
+                    <div class="line"></div>
+                    <div id="start-marker" class="marker"></div>
+                    <div id="end-marker" class="marker"></div>
+                    <div id="current-marker" class="marker current-marker"></div>
+
+                    <div id="start-label" class="label"></div>
+                    <div id="end-label" class="label"></div>
+                    <div id="current-label" class="label current"></div>
+                </div> <!-- #timeline -->
+            </div> <!-- .row -->
+        </div> <!-- #page-header -->
+        <h2 id="course-title">Home Page</h2>
+
+        <div id="section" class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title" id="course-term"> Term </h4>
+                <p class="card-text">
+                <ul>
+                    <li id="schedule"></li>
+                    <li id="location"></li>
+                    <li id="hyflex"></li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div id="about-course" class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title" id="course-number">About</h4>
+                <p class="card-text" id="course-about">
+                    <!--This course is an introduction to programming. We will cover the
+                    basics of programming, including variables, data types, control structures, and functions. We will
+                    also cover more advanced topics such as object-oriented programming and data structures.-->
+                </p>
+                <figure>
+                    <img id="textbook-image" class="rounded" src="/course-content/images/web_content.jpg"
+                        alt="Textbook Image" />
+                    <figcaption style="text-align: center;" id="textbook-title">
+                    </figcaption>
+                </figure>
+            </div>
+        </div> <!-- #about-course -->
+
+        <div id="about-instructor" class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title">Instructor</h4>
+                <div class="card-text">
+                    <h4 id="instructor-name" style="text-align: center;">Name</h4>
+                    <p id="instructor-about">about.</p>
+                    <p><a href="#" target="_blank" id="instructor-link">more about me.</a></p>
+                </div>
+                <figure><img id="instructor-image" class="rounded" src="" alt="Instructor Image" />
+                    <figcaption style="text-align: center;">
+                    </figcaption>
+                </figure>
+            </div>
+        </div> <!-- #about-instructor -->
+
+        <div id="contact" class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title">Office Hours</h4>
+                <div class="card-text">
+                    <p style="font-style: italic;">Zoom Link</p>
+                    <p>
+                        Office hours are published in the course syllabus and linked from the course home page.
+                    </p>
+                    <div style="text-align: center;">
+                        <a id="office-hours-button" class="btn btn-primary icon-group" href="#" target="_top"></a>
+                    </div>
+                </div>
+
+                <h4 class="card-title">Discord</h4>
+                <div class="card-text">
+                    <p style="font-style: italic;">What's this?</p>
+                    <p>
+                        Discord is an instant messaging social platform. Come and visit with me and others from class.
+                        It is a great place to engage with others and ask and answer questions. Come look around.
+                    </p>
+                    <div style="text-align: center;">
+                        <img id="discord-icon" src="/course-content/images/discord-logo.png" alt="discord link image"
+                            width="100" /><br />
+                        <a id="discord-link" class="btn btn-primary icon-group" href="#" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- #contact -->
+
+        <div id="getting-started" class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title">Getting Started</h4>
+                <dl>
+                    <dt>FIRST: <span class="ordinals">1</span> </dt>
+                    <dd><strong>
+                            Always</strong> check for any new announcements. Recent announcements will be linked at the
+                        top
+                        of <em>this</em> homepage. If you missed something or want to go back and read an earlier
+                        announcements, they are always available from the Canvas menu.
+                        <p>&nbsp;</p>
+                    </dd>
+                    <dt>NEXT: <span class="ordinals">2</span></dt>
+                    <dd>Review each section above to read more about about the course and your instructor. Check out the
+                        Discord channel to say "Hello."
+                        <p>&nbsp;</p>
+                    </dd>
+                    <dt>THEN: <span class="ordinals">3</span> </dt>
+                    <dd><strong>Read</strong> the Course Syllabus &amp; Outline
+                        <p style="text-align: center;">
+                            <a id="syllabus-button" class="btn btn-primary" href="#" target="_top">Syllabus</a>
+                        </p>
+                    </dd>
+                    <dt>FINALLY: <span class="ordinals">4</span> </dt>
+                    <dd><strong>Go to</strong> Module 1
+                        <p style="text-align: center;">
+                            <a id="modules-button" class="btn btn-primary" href="#" target="_top">Start Here</a>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div> <!-- #getting-started -->
+
+        <div id="footer">
+            <a href="#top">Back to Top</a>
+        </div> <!-- #footer -->
+    </div> <!-- #top -->
+
+<script type="module" src="https://cdn.jsdelivr.net/gh/yourname/edu-core/js/renderer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
