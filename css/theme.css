@@ -1,0 +1,10 @@
+#ite-policies header,
+#ite-syllabus-template header {
+    background: url('https://uid100.github.io/course-content/images/sfc_logo_vertical_blue.png') no-repeat left center;
+    background-size: auto 110px;
+}
+
+header h4 {
+    background: rgba(255,255,255,0.7);
+    color: black;
+}

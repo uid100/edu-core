@@ -1,0 +1,38 @@
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background-color: lightskyblue;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    font-size: larger;
+}
+
+.ordinals {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.boxed-paragraph {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.shadow {
+    background-color: #D8C3A5;
+}
+
+.letter {
+    background-color: #8fcff7;
+    border: 2px solid #74a2bf;
+    font-style: italic;
+}

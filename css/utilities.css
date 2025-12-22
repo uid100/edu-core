@@ -1,0 +1,28 @@
+.col-20 { width: 20%; }
+.col-30 { width: 30%; }
+.col-35 { width: 35%; }
+.col-80 { width: 80%; }
+
+.highlight {
+    background-color: yellow;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.signpost {
+    color: green;
+    font-size: 1.5em;
+}
+
+.ic-flash-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.example {
+    background-color: #f0f0f0;
+    padding: 1em;
+    border-left: 4px solid #007acc;
+}

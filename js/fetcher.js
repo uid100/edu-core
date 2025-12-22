@@ -5,17 +5,17 @@ export async function fetchJSON(url) {
 }
 
 export async function loadCourseConfig(courseId) {
-    const base = `https://raw.githubusercontent.com/yourname/${courseId}/main/`;
+    const base = `https://raw.githubusercontent.com/uid100/${courseId}/main/`;
 
     const course = await fetchJSON(base + "course.json");
 
     // Load shared metadata from edu-core
     const college = await fetchJSON(
-        `https://raw.githubusercontent.com/yourname/edu-core/main/colleges/${course.college}.json`
+        `https://raw.githubusercontent.com/uid100/edu-core/main/colleges/${course.college}.json`
     );
 
     const instructor = await fetchJSON(
-        `https://raw.githubusercontent.com/yourname/edu-core/main/instructors/${course.instructor}.json`
+        `https://raw.githubusercontent.com/uid100/edu-core/main/instructor/${course.instructor}.json`
     );
 
     // Load outcomes/objectives
