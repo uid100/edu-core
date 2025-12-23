@@ -25,6 +25,7 @@ async function render() {
     setText("course-term", data.section.term);
     setText("schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
     setText("location", data.section.schedule.location);
+    console.log("start date:", data.section.startDate);
 
     // Populate textbook
     setImage("textbook-image", data.base + data.textbook.imagePath);
