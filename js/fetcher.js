@@ -8,6 +8,8 @@ export async function loadCourseConfig(courseId) {
     const courseBase = `https://raw.githubusercontent.com/uid100/${courseId}/main/`;
     const eduCoreBase = "https://uid100.github.io/edu-core/";
 
+    console.log(`Loading course configuration for ${courseId}...`);
+    console.log(`read course data from: ${courseBase}course.json`);
     const course = await fetchJSON('${courseBase}course.json');
 
     // Load shared metadata from edu-core
