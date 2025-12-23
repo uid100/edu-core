@@ -1,4 +1,4 @@
-import { renderTimeline } from 'https://uid100.github.com/timeline/js/timeline.js';
+import { renderTimeline } from 'https://uid100.github.io/timeline/js/timeline.js';
 import { getQueryParam } from "./utils.js";
 import { loadCourseConfig } from "./fetcher.js";
 import { setText, setHTML, setImage, setLink } from "./dom.js";
