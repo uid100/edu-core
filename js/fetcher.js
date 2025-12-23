@@ -5,10 +5,10 @@ export async function fetchJSON(url) {
 }
 
 export async function loadCourseConfig(courseId) {
-    const base = `https://uid100.github.io/${courseId}/`;
+    const base = `https://raw.githubusercontent.com/uid100/${courseId}/main/`;
     const eduCoreBase = "https://uid100.github.io/edu-core/";
 
-    const course = await fetchJSON(base + "course.json");
+    const course = await fetchJSON('${base}course.json');
 
     // Load shared metadata from edu-core
     const college = await fetchJSON(
