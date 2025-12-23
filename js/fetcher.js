@@ -10,7 +10,7 @@ export async function loadCourseConfig(courseId) {
 
     console.log(`Loading course configuration for ${courseId}...`);
     console.log(`read course data from: ${courseBase}course.json`);
-    const course = await fetchJSON('${courseBase}course.json');
+    const course = await fetchJSON(`${courseBase}course.json`);
 
     // Load shared metadata from edu-core
     const college = await fetchJSON(
