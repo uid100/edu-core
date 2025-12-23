@@ -51,4 +51,5 @@ async function render() {
     }
 }
 
+console.log("Renderer loaded");
 render();
