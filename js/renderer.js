@@ -26,8 +26,6 @@ async function render() {
     setText("course-term", data.section.term);
     setText("schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
     setText("location", data.section.schedule.location);
-    console.log("section data:", data.section);
-    console.log("start date:", data.section.startDate);
 
     // Populate textbook
     setImage("textbook-image", data.base + data.textbook.imagePath);
@@ -46,8 +44,6 @@ async function render() {
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
 
     // Timeline logic (optional)
-    console.log("timeline test?");
-    console.log("Rendering timeline:", data.section.startDate, data.section.endDate);
     if (window.renderTimeline) {
         console.log("Calling renderTimeline");
         renderTimeline(data.section.startDate, data.section.endDate);
