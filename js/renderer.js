@@ -43,6 +43,7 @@ async function render() {
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
 
     // Timeline logic (optional)
+    console.log("timeline test?");
     console.log("Rendering timeline:", data.section.startDate, data.section.endDate);
     if (window.renderTimeline) {
         console.log("Calling renderTimeline");
