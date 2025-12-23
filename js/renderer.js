@@ -1,3 +1,4 @@
+import { renderTimeline } from 'https://uid100.github.com/timeline/js/timeline.js';
 import { getQueryParam } from "./utils.js";
 import { loadCourseConfig } from "./fetcher.js";
 import { setText, setHTML, setImage, setLink } from "./dom.js";
@@ -49,7 +50,7 @@ async function render() {
     console.log("Rendering timeline:", data.section.startDate, data.section.endDate);
     if (window.renderTimeline) {
         console.log("Calling renderTimeline");
-        window.renderTimeline(data.section.startDate, data.section.endDate);
+        renderTimeline(data.section.startDate, data.section.endDate);
     }
 }
 
