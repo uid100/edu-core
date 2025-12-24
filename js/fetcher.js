@@ -19,16 +19,20 @@ export async function loadCourseConfig(courseId) {
         `${eduCoreBase}instructor/${course.instructor}.json`
     );
 
+    console.log('load outcomes and objectives');
     // Load outcomes/objectives
     const outcomes = await fetchJSON(courseBase + course.outcomes);
     const objectives = await fetchJSON(courseBase + course.objectives);
 
+    console.log('load section data');
     // Load section
     const section = await fetchJSON(courseBase + `sections/${course.defaultSection}.json`);
 
+    console.log('load textbook info');
     // Load textbook
     const textbook = await fetchJSON(courseBase + course.textbook);
 
+    console.log('all data loaded');
     return {
         courseBase,
         course,
