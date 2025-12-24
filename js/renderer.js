@@ -58,8 +58,8 @@ async function render() {
     setLink("office-hours-button", data.course.contact?.officeHours?.zoomLink || "#");
     setText("office-hours-button", data.course.contact?.officeHours?.label || "Office Hours");
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
+    setText("discord-link", data.course.contact?.discordLink?.label || "Discord");
 
-    // Timeline logic (optional)
     if (window.renderTimeline) {
         renderTimeline(data.section.startDate, data.section.endDate);
     }
