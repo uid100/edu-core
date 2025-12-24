@@ -2,7 +2,7 @@
   "firstName": "Dan",
   "lastName": "Sullivan",
   "email": "dsullivan1@palomar.edu",
-  "imagePath": "/images/Dan_20070717.jpg",
+  "imagePath": "../images/Dan_20070717.jpg",
   "about": "Over 30 years professional experience as a software engineer and program manager. I have worked for large and small companies.",
   "url": "/shared/instructor_more.html"
 }
