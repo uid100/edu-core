@@ -17,9 +17,16 @@
     margin: 0 0 10px 10px;
 }
 
-.timeline {
+#instructor-image,
+#textbook-image {
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+}
+
+/* .timeline {
     position: relative;
     margin: 50px auto;
     height: 100px;
     max-width: 800px;
-}
+} */
