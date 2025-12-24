@@ -16,6 +16,12 @@
     height: 150px;
     margin: 0 0 10px 10px;
 }
+#college-logo {
+    float: left;
+    width: 280px;
+    margin: 10px 10px;
+}
+
 
 #instructor-image,
 #textbook-image {
