@@ -61,7 +61,7 @@ async function render() {
     setText("discord-link", data.course.contact?.discordLink?.label || "Discord");
 
     if (window.renderTimeline) {
-        renderTimeline(data.section.startDate, data.section.endDate);
+        renderTimeline(data.section.dates.start, data.section.dates.end);
     }
 }
 
