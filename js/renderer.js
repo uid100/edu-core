@@ -17,7 +17,7 @@ async function render() {
     const data = await loadCourseConfig(courseId);
 
     // Populate college
-    setImage("college-logo", resolveCourseAsset(courseId, data.college.logoPath));
+    setImage("college-logo", data.college.logoPath);
     setLink("college-link", data.college.website);
 
     // Populate course
