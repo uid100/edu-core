@@ -51,7 +51,6 @@ async function render() {
 
     // Timeline logic (optional)
     if (window.renderTimeline) {
-        console.log("Rendering timeline... from", data.section.startDate, "to", data.section.endDate);
         renderTimeline(data.section.startDate, data.section.endDate);
     }
 }
