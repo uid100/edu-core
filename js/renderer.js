@@ -55,7 +55,8 @@ async function render() {
         data.section.canvas.coursePath +
         "/modules";
     setLink("modules-button", modulesUrl);
-    setLink("office-hours-button", data.section.officeHoursLink || "#");
+    setLink("office-hours-button", data.course.contact?.officeHours?.zoomLink || "#");
+    setText("office-hours-button", data.course.contact?.officeHours?.label || "Office Hours");
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
 
     // Timeline logic (optional)
