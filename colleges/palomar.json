@@ -1,6 +1,6 @@
 {
   "name": "Palomar College",
-  "logoPath": "images/palomar-college-logo.jpg",
+  "logoPath": "../images/palomar-college-logo.jpg",
   "website": "https://www.palomar.edu/",
   "academicCalendar": "https://www.palomar.edu/enrollmentservices/printable-pdf-calendars/"
 }
