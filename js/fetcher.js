@@ -1,7 +1,3 @@
-function resolveCourseAsset(courseId, relativePath) {
-    return `https://raw.githubusercontent.com/uid100/${courseId}/main${relativePath}`;
-}
-
 export async function fetchJSON(url) {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Failed to fetch ${url}`);

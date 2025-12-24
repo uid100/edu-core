@@ -3,6 +3,10 @@ import { getQueryParam } from "./utils.js";
 import { loadCourseConfig } from "./fetcher.js";
 import { setText, setHTML, setImage, setLink } from "./dom.js";
 
+function resolveCourseAsset(courseId, relativePath) {
+    return `https://raw.githubusercontent.com/uid100/${courseId}/main${relativePath}`;
+}
+
 async function render() {
     const courseId = getQueryParam("course");
     if (!courseId) {
@@ -47,7 +51,6 @@ async function render() {
 
     // Timeline logic (optional)
     if (window.renderTimeline) {
-        console.log("Calling renderTimeline");
         renderTimeline(data.section.startDate, data.section.endDate);
     }
 }
