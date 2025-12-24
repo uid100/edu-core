@@ -13,12 +13,16 @@
 }
 
 .ordinals {
+    display: inline-block;
     width: 27px;
     height: 27px;
+    line-height: 27px;  /* Vertically center the text */
     border-radius: 50%;
     background-color: green;
     color: white;
     text-align: center;
+    font-weight: bold;
+    margin-left: 6px;
 }
 
 .boxed-paragraph {
