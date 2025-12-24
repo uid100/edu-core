@@ -44,7 +44,12 @@ async function render() {
     setLink("instructor-link", data.instructor.url);
 
     // Buttons
-    setLink("syllabus-button", data.base + data.course.templates.syllabus);
+    // setLink("syllabus-button", data.base + data.course.templates.syllabus);
+    const syllabusUrl = 
+        data.section.canvas.server +
+        data.section.canvas.coursePath +
+        "/assignments/syllabus";
+    setLink("syllabus-button", syllabusUrl);
     setLink("modules-button", data.course.canvas.coursePath + "/modules");
     setLink("office-hours-button", data.section.officeHoursLink || "#");
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
