@@ -50,7 +50,11 @@ async function render() {
         data.section.canvas.coursePath +
         "/assignments/syllabus";
     setLink("syllabus-button", syllabusUrl);
-    setLink("modules-button", data.course.canvas.coursePath + "/modules");
+    const modulesUrl = 
+        data.section.canvas.server +
+        data.section.canvas.coursePath +
+        "/modules";
+    setLink("modules-button", modulesUrl);
     setLink("office-hours-button", data.section.officeHoursLink || "#");
     setLink("discord-link", data.course.contact?.discordLink?.url || "#");
 
