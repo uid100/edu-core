@@ -168,7 +168,7 @@ async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
     return;
   }
   if (!moduleId) {
-    document.getElementById("labAccordion").innerHTML = `
+    document.getElementById("labAccordionContainer").innerHTML = `
       <div class="alert alert-warning" role="alert">
         Missing <code>?module=</code> parameter. Example:
         <code>templates/lab.html?course=palomar-csit175&module=01-sequential</code>
@@ -183,7 +183,7 @@ async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
 
   const spec = resolveLabSpec(course, courseBase, { moduleId, labId });
   if (!spec) {
-    document.getElementById("labAccordion").innerHTML = `
+    document.getElementById("labAccordionContainer").innerHTML = `
       <div class="alert alert-warning" role="alert">
         Lab content not found in <code>${courseId}/course.json</code> under
         <code>content.modules["${moduleId}"].exercises.${labId || "lab"}</code>.
