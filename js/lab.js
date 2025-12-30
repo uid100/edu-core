@@ -11,6 +11,7 @@ import { setText } from "./dom.js";
  */
 function resolveLabSpec(course, courseBase, { moduleId, labId }) {
   const byModule = course?.content?.modules?.[moduleId];
+  console.log("byModule:", byModule);
   if (byModule?.exercises) {
     const labKey = labId || "lab";
     const labSpec = byModule.exercises[labKey];
