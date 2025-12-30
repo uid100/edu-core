@@ -121,9 +121,9 @@ function buildAccordionItem({ index, title, html, parentId }) {
 }
 
 async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
-  const container = document.getElementById("labAccordionContainer");
+  const container = document.getElementById("labAccordion");
   if (!container) {
-    console.error("#labAccordionContainer not found");
+    console.error("#labAccordion not found");
     return;
   }
 
