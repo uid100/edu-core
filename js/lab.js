@@ -10,6 +10,7 @@ import { setText } from "./dom.js";
  * - Optional fallback: course.content.labs[labId] (if a course prefers a flat structure)
  */
 function resolveLabSpec(course, courseBase, { moduleId, labId }) {
+  console.log("resolveLabSpec:", { moduleId, labId });
   const byModule = course?.content?.modules?.[moduleId];
   console.log("byModule:", byModule);
   if (byModule?.exercises) {
