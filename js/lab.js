@@ -139,7 +139,7 @@ async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
     return;
   }
 
-  const accordionId = "labAccordion";
+  const accordionId = "labAccordionContainer";
   const accordion = document.createElement("div");
   accordion.className = "accordion";
   accordion.id = accordionId;
