@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bundle.css">
+    <link rel="stylesheet" href="https://uid100.github.io/timeline/css/timeline.css">
+
+    <!-- Query parameter loader -->
+    <script src="../js/query.js"></script>
+</head>
+
+<body>
+    <div id="top"></div>
+
+    <div id="labpage" class="container mt-3">
+
+        <div id="page-header">
+            <div class="row">
+                <div class="col-6 text-start">
+                    <a id="college-link" href="#" target="_blank">
+                        <img id="college-logo" class="logo" src="" alt="College Logo" />
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <figure>
+                        <img id="cover-image" src="" alt="cover page image" />
+                    </figure>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="timeline" id="timeline">
+                    <div class="line"></div>
+                    <div id="start-marker" class="marker"></div>
+                    <div id="end-marker" class="marker"></div>
+                    <div id="current-marker" class="marker current-marker"></div>
+
+                    <div id="start-label" class="timeline-label"></div>
+                    <div id="end-label" class="timeline-label"></div>
+                    <div id="current-label" class="timeline-label current"></div>
+                </div>
+            </div>
+        </div> <!-- #page-header -->
+
+        <h2 id="module-title" class="mt-4">Module Title Placeholder</h2>
+
+        <div class="accordion mb-4" id="labAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="overviewHeading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#overviewCollapse" aria-expanded="true" aria-controls="overviewCollapse">
+                        Assignment Overview & Objectives
+                    </button>
+                </h2>
+                <div id="overviewCollapse" class="accordion-collapse collapse show"
+                    aria-labelledby="overviewHeading" data-bs-parent="#labAccordion">
+                    <div class="accordion-body" id="overview-content">
+                        <!-- Placeholder: course-specific overview injected by course repo -->
+                        <p><em>Overview, background, and objectives will be loaded here.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exercise-container">
+                <!-- JS will insert exercise cards here -->
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="wrapupHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#wrapupCollapse" aria-expanded="false" aria-controls="wrapupCollapse">
+                        Review & Submission Instructions
+                    </button>
+                </h2>
+                <div id="wrapupCollapse" class="accordion-collapse collapse"
+                    aria-labelledby="wrapupHeading" data-bs-parent="#labAccordion">
+                    <div class="accordion-body" id="wrapup-content">
+                        <!-- Placeholder: optional wrap-up instructions -->
+                        <p><em>Submission instructions or review notes go here.</em></p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end accordion -->
+    </div> <!-- end container -->
+
+    <script type="module" src="../js/renderer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script>
+        // Reads ?course=xxx&module=yyy&topic=zzz
+        const params = new URLSearchParams(window.location.search);
+        const course = params.get("course");
+        const moduleId = params.get("module");
+        const topic = params.get("topic");
+
+        // Set module title
+        document.getElementById("module-title").innerText =
+            `Module ${moduleId}: ${topic || "Lab"}`;
+
+        // Load course.json for header, images, timeline
+        if (course) {
+            fetch(`https://uid100.github.io/${course}/course.json`)
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById("college-logo").src = data.college.logo;
+                    document.getElementById("college-link").href = data.college.url;
+                    document.getElementById("cover-image").src = data.images.cover;
+                    document.getElementById("course-title").innerText = data.title;
+
+                    // timeline setup
+                    // (your existing timeline JS can run here)
+                });
+        }
+
+        // Load exercise list from py repo
+        if (topic) {
+            fetch(`https://uid100.github.io/py/${topic}/ex/ex-list.json`)
+                .then(r => r.json())
+                .then(exList => {
+                    const container = document.getElementById("exercise-container");
+
+                    exList.forEach((ex, idx) => {
+                        const card = document.createElement("div");
+                        card.className = "accordion-item";
+
+                        card.innerHTML = `
+                            <h2 class="accordion-header" id="exHeading${idx}">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#exCollapse${idx}"
+                                    aria-expanded="false"
+                                    aria-controls="exCollapse${idx}">
+                                    Exercise ${idx + 1}: ${ex.title}
+                                </button>
+                            </h2>
+                            <div id="exCollapse${idx}" class="accordion-collapse collapse"
+                                aria-labelledby="exHeading${idx}" data-bs-parent="#labAccordion">
+                                <div class="accordion-body">
+                                    <iframe src="https://uid100.github.io/py/${topic}/ex/${ex.file}"
+                                        width="100%" height="600px" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        `;
+
+                        container.appendChild(card);
+                    });
+                });
+        }
+    </script> -->
+
+</body>
+</html>
