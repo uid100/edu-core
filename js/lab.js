@@ -88,10 +88,10 @@ async function fetchFragment(url) {
 }
 
 function buildAccordionItem({ index, title, html, parentId }) {
-  // const key = `${index}`.padStart(2, "0");
-  // const headingId = `heading-${key}`;
-  // const collapseId = `collapse-${key}`;
-  // const startOpen = index === 0;
+  const key = `${index}`.padStart(2, "0");
+  const headingId = `heading-${key}`;
+  const collapseId = `collapse-${key}`;
+  const startOpen = index === 0;
 
   // const headerClass =
   //   /submit/i.test(title) ? "bg-success text-white" :
