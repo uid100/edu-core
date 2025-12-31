@@ -1,4 +1,3 @@
-
 // js/lab.js
 import { getQueryParam } from "./utils.js";
 import { fetchJSON, loadCourseConfig } from "./fetcher.js";
@@ -140,9 +139,13 @@ function buildAccordionItem({ index, title, html, parentId, headerStyle }) {
         <div class="card border-0">
           <div class="card-body">
             ${html}
-          </div>
+          </div> <!-- .card-body -->
+        </div> <!-- .card -->
+        <!-- back to top -->
+        <div class="text-center my-3">
+          <a href="#top" class="btn btn-sm btn-outline-secondary">Back to Top</a>
         </div>
-      </div>
+      </div> <!-- .accordion-body -->
     </div>
   `;
 
