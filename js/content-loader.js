@@ -31,25 +31,13 @@ export async function fetchHtmlOrAlert(url) {
   return res.text();
 }
 
-/** Build a single Bootstrap card with anchors and back-to-top. */
+/** Build a single Bootstrap card */
 export function buildTopicCard({ title, html, headerStyle = "primary" }) {
   const headerClass = headerStyleClass(headerStyle);
 
   const wrapper = document.createElement("div");
   wrapper.className = "card mb-4";
 
-  wrapper.innerHTML = `
-    <div>
-      <!-- Top-of-section anchor -->
-      <a id="section-00" tabindex="-1" aria-hidden="true"></a>
-      ${html}
-      <div class="text-center my-3">
-        #top
-          Back to top ↑
-        </a>
-      </div>
-    </div>
-  `;
   return wrapper;
 }
 
