@@ -39,7 +39,7 @@ export function buildTopicCard({ title, html, headerStyle = "primary" }) {
   wrapper.className = "card mb-4";
 
   wrapper.innerHTML = `
-    <div class="card-body">
+    <div>
       <!-- Top-of-section anchor -->
       <a id="section-00" tabindex="-1" aria-hidden="true"></a>
       ${html}
