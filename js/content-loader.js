@@ -36,8 +36,17 @@ export function buildTopicCard({ title, html, headerStyle = "primary" }) {
   const headerClass = headerStyleClass(headerStyle);
 
   const wrapper = document.createElement("div");
-  wrapper.className = "card mb-4";
+  wrapper.className = "mb-4";
 
+   wrapper.innerHTML = `
+    <div>
+      <!-- Top-of-section anchor -->
+      <a id="section-00" tabindex="-1" aria-hidden="true"></a>
+      ${html}
+      <div class="text-center my-3"></a>
+      </div> <!-- .text-center -->
+    </div> <!-- .card-body -->
+  `;
   return wrapper;
 }
 
