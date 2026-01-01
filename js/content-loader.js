@@ -111,23 +111,6 @@ export async function renderAccordionFromTaskList({ mountEl, taskListUrl, fragme
           ${title}
         </button>
       </h2>
-      <div id="${collapseId}" class="accordion-collapse collapse ${startOpen ? "show" : ""}"
-           aria-labelledby="${headingId}" data-bs-parent="#${accordionId}">
-        <div class="accordion-body p-0">
-          <div class="card border-0">
-            <div class="card-body">
-              <!-- Section anchor -->
-              <a id="section-${key}" tabindex="-1" aria-hidden="true"></a>
-              ${html}
-              <div class="text-center my-3">
-                #top
-                  Back to top ↑
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     `;
     accordion.appendChild(item);
   }
