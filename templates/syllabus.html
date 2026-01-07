@@ -47,7 +47,11 @@
                 </div> <!-- #timeline -->
             </div> <!-- .row -->
         </div> <!-- #page-header -->
-        <h2 id="course-title">Syllabus</h2>
+
+        <div id="course_header">
+            <h2><span id="course-number"></span> Syllabus</h2>
+            <h3 id="course-title">(course)</h3>
+        </div> <!-- #course_header -->
 
         <div id="section" class="card mx-auto">
             <div class="card-body">
@@ -79,6 +83,196 @@
             </div> <!-- .card-body -->
         </div> <!-- #about-course -->
 
+                <div id="general-class-information" class="card mb-3">
+            <div class="card-header text-center">
+                <span id="term">Term</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>General Class Information</h5>
+                </div> <!-- .card-title -->
+                <div class="card-text">
+                    <ul>
+                        <li>term: <span id="course-term" style="font-style: italic;">(term)</span></li>
+                        <li>course:<span id="course-num" style="font-style: italic;"></span></li>
+                        <li>units: <span id="units" style="font-style: italic;">(units)</span></li>
+                        <li>id: <span id="course-id" style="font-style: italic;"></span></li>
+                        <li>section: <span id="section-id" style="font-style: italic;"></span></li>
+                    </ul>
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #general-class-information .card -->
+
+        <div id="instructor-information" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Instructor Information</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-title">
+                    <h5 id="instructor">Instructor Information</h5>
+                </div> <!-- .card-title -->
+                <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>email: <span id="instructor-email" style="font-style: italic;">(email)</span></li>
+                                <li>office hours: <span id="office-hours" style="font-style: italic;">(office
+                                        hours)</span>
+                                </li>
+                                <li>location: Online office hours. See <em>zoom link</em></li>
+                                <li>zoom link: <a id="zoom-link">Meeting Link</a></li>
+                                <li>Discord: <a id="discord-link"> link </a></li>
+                            </ul>
+                        </div> <!-- .col-6 -->
+                        <div class="col-6">
+                            <img id="instructor-image" src="" alt="Instructor Image" />
+                        </div> <!-- .col-6 -->
+                    </div> <!-- .row -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #instructor-information .card -->
+
+                <div id="course-description" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Course Description</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>Course Description</h5>
+                </div> <!-- .card-title -->
+                <div class="card-text">
+                    <p id="course-about"></p>
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #course-description .card -->
+
+        <div id="course-objectives" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Goals and Objectives</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>Goals and Objectives</h5>
+                </div> <!-- .card-title -->
+                <div class="card-text">
+                    <p>
+                        These student learning objectives (SLOs) describe specific skills or
+                        knowledge that students will achieve to demonstrate expected course
+                        learning outcomes (CLOs) intended to describe the broader competencies
+                        and achievements resulting from successfully meeting those objectives.
+                    </p>
+                    <div id="goals">
+                        <h5>Objectives</h5>
+                        <p>
+                            The curriculum modules and content are designed to help students:
+                        </p>
+                        <p id="objectives" class="mt-3"></p>
+                    </div> <!-- #goals -->
+                    <div id="reqts" class="mt-3">
+                        <h5>Course Learning Outcomes</h5>
+                        <p>
+                            Upon successful completion of this course, students will be able to:
+                        </p>
+                        <p id="outcomes" class="mt-3"></p>
+                    </div> <!-- #reqts -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #course-objectives .card -->
+
+                <div id="course-materials" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Course Materials</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-text">
+                    <div id="materials" class="mt-3">
+                        <h5>Required Materials</h5>
+                        <span id="required-materials"></span>
+                    </div> <!-- #materials -->
+                    <div id="recommended" class="mt-3">
+                        <h5>Recommended Materials</h5>
+                        <span id="recommended-materials"></span>
+                    </div> <!-- #recommended -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #course-materials .card -->
+
+        <div id="grades" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Grading</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-text">
+                    <div id="grading">
+                        <h5>Grading Scale and Calculations</h5>
+                        <span id="grading-details"></span>
+                    </div> <!-- #grading -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #grades .card -->
+
+        <div id="accessbility" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Accommodations and Accessbility</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-text">
+                    <div id="accommodations">
+                        <span id="accommodations-details"></span>
+                    </div> <!-- #accommodations -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #accessbility .card -->
+
+                <div id="outline" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Course Outline</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-text">
+                    <div id="outline">
+                        <span id="topic-outline"></span>
+                    </div> <!-- #outline -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+        </div> <!-- #outline .card -->
+
+        <div id="links-card" class="card mb-3">
+            <div class="card-header text-center">
+                <span>Links</span>
+            </div> <!-- .card-header -->
+            <div class="card-body">
+                <div class="card-text">
+                    <div id="links-card">
+                        <div id="links" style="display: block">
+                            <!-- <div id="links"> -->
+                            <ul>
+                                <li>
+                                    <a id="syllabus-template" target="_blank">Course Syllabus (ITE template)</a>
+                                </li>
+                                <li>
+                                    <a id="policies-template" target="_blank">ITE Department Policies</a>
+                                </li>
+                                <li style="display: none;">
+                                    <a id="online-classes" target="_blank"
+                                        href="/course-content/common/online-classes.html">
+                                        About Online Classes</a>
+                                </li>
+                                <li style="display: none;">
+                                    <a id="late-policy" target="_blank" href="/course-content/common/late-policy.html">
+                                        More About Late Submissions</a>
+                                </li>
+                                <li>
+                                    <a id="getting-help" target="_blank" style="display: none"
+                                        href="/course-content/common/getting-help.html">
+                                        Getting Help</a>
+                                </li>
+                            </ul>
+                        </div> <!-- #links -->
+                    </div> <!-- #links-card -->
+                </div> <!-- .card-text -->
+            </div> <!-- .card-body -->
+            
         <div id="footer">
             <a href="#top">Back to Top</a>
         </div> <!-- #footer -->
