@@ -104,10 +104,10 @@ async function render() {
     // Fetch in parallel; fill only if we got content
     await Promise.all([
     requiredURL
-        ? fetchHtmlOrAlert(requiredURL).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
+        ? fetchHtmlOrAlert(data.courseBase + requiredPath).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
         : Promise.resolve(),
     recommendedURL
-        ? fetchHtmlOrAlert(recommendedURL).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
+        ? fetchHtmlOrAlert(data.courseBase + recommendedPath).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
         : Promise.resolve(),
     ]);
 
