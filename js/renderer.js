@@ -31,7 +31,8 @@ async function render() {
 
     // Populate section
     setTextAll(".course-term", data.section.term);
-    setTextAll(".course-id", data.section.sectionNumber);
+    setTextAll(".course-id", data.section.courseId);
+    setTextAll(".section-id", data.section.sectionNumber);
     setTextAll(".schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
     setTextAll(".location", data.section.schedule.location);
 
