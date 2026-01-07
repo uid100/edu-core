@@ -25,7 +25,7 @@ async function render() {
     setTextAll(".course-title", data.course.courseTitle);
     setTextAll(".course-number", data.course.courseNumber);
     setTextAll(".units", data.course.units);
-    setHTML("course-about", data.course.description.join("<br><br>"));
+    setHTML("course-about", data.course.description.join("<br>"));
     // setImage("cover-image", data.base + data.course.coverImage);
     setImage("cover-image", resolveCourseAsset(courseId, data.course.coverImage));
 
