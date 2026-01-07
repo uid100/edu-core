@@ -43,7 +43,7 @@ async function render() {
 
     // Populate instructor
     setText("instructor-name", `${data.instructor.firstName} ${data.instructor.lastName}`);
-    setText("instructor-email", `${data.section.instructorEmail}`);
+    setText("instructor-email", `${data.course.instructorEmail}`);
     setHTML("instructor-about", data.instructor.about);
     setImage("instructor-image", data.instructor.imagePath);
     setLink("instructor-link", data.instructor.url);
