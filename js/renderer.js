@@ -48,7 +48,7 @@ async function render() {
     setImage("instructor-image", data.instructor.imagePath);
     setLink("instructor-link", data.instructor.url);
     setText("office-hours", data.course.contact?.officeHours?.label || "Office Hours");
-
+    setLink("zoom-link", data.course.contact?.officeHours?.zoomLink || "#");
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
@@ -70,6 +70,7 @@ async function render() {
     if (window.renderTimeline) {
         renderTimeline(data.section.dates.start, data.section.dates.end);
     }
+
 }
 
 render();
