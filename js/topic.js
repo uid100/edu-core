@@ -30,6 +30,7 @@ import { resolvePageSpec, fetchHtmlOrAlert, buildTopicCard } from "./content-loa
   const course     = data.course;
 
   const spec = resolvePageSpec(course, courseBase, { moduleId, pageId });
+  console.log("moduleId:", moduleId, "pageId:", pageId, "spec:", spec);
   if (!spec) {
     const mount = document.getElementById("topicContainer");
     if (mount) {
