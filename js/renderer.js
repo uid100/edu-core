@@ -94,35 +94,35 @@ async function render() {
 
     // materials
 
-    const materials = data?.course?.materials || {};
-    const requiredPath = materials.required;
-    const recommendedPath = materials.recommended;
+    // const materials = data?.course?.materials || {};
+    // const requiredPath = materials.required;
+    // const recommendedPath = materials.recommended;
 
-    const requiredEl = document.getElementById('required-materials');
-    const recommendedEl = document.getElementById('recommended-materials');
+    // const requiredEl = document.getElementById('required-materials');
+    // const recommendedEl = document.getElementById('recommended-materials');
 
 
-    // Fetch in parallel; fill only if we got content
-    await Promise.all([
-    requiredURL
-        ? fetchHtmlOrAlert(requiredURL).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
-        : Promise.resolve(),
-    recommendedURL
-        ? fetchHtmlOrAlert(recommendedURL).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
-        : Promise.resolve(),
-    ]);
+    // // Fetch in parallel; fill only if we got content
+    // await Promise.all([
+    // requiredURL
+    //     ? fetchHtmlOrAlert(requiredURL).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
+    //     : Promise.resolve(),
+    // recommendedURL
+    //     ? fetchHtmlOrAlert(recommendedURL).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
+    //     : Promise.resolve(),
+    // ]);
 
-    // const requiredMaterialsPath = data.course.materials.required;
-    // const requiredMaterialsElement = document.getElementById('required-materials');
-    // fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
-    //     requiredMaterialsElement.innerHTML = html;
-    // });
+    const requiredMaterialsPath = data.course.materials.required;
+    const requiredMaterialsElement = document.getElementById('required-materials');
+    fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
+        requiredMaterialsElement.innerHTML = html;
+    });
 
-    // const recommendedMaterialsPath = data.course.materials.recommended;
-    // const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
-    // fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
-    //     recommendedMaterialsElement.innerHTML = html;
-    // });
+    const recommendedMaterialsPath = data.course.materials.recommended;
+    const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
+    fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
+        recommendedMaterialsElement.innerHTML = html;
+    });
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
