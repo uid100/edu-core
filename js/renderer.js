@@ -8,6 +8,53 @@ function resolveCourseAsset(courseId, relativePath) {
     return `https://raw.githubusercontent.com/uid100/${courseId}/main${relativePath}`;
 }
 
+
+// --- Main render pipeline for outcomes & objectives ---
+async function renderOutcomesAndObjectives() {
+  try {
+    const base = getCourseBaseURL();
+
+    // 1) Load course.json
+    const courseConfig = await fetchJSON(`${base}course.json`);
+
+    // Expect keys: "outcomes" and "objectives" (relative paths)
+    const outcomesPath = courseConfig.outcomes;
+    const objectivesPath = courseConfig.objectives;
+
+    if (!outcomesPath && !objectivesPath) {
+      console.warn('course.json missing "outcomes" and "objectives" keys');
+      return;
+    }
+
+    // 2) Fetch each file if present
+    const [outcomesData, objectivesData] = await Promise.all([
+      outcomesPath ? fetchJSON(`${base}${outcomesPath}`) : Promise.resolve(null),
+      objectivesPath ? fetchJSON(`${base}${objectivesPath}`) : Promise.resolve(null)
+    ]);
+
+    // 3) Render into placeholders
+    if (Array.isArray(outcomesData)) {
+      renderListInto('outcomes', outcomesData);
+    } else if (outcomesData) {
+      console.warn('Outcomes JSON is not an array:', outcomesData);
+    }
+
+    if (Array.isArray(objectivesData)) {
+      renderListInto('objectives', objectivesData);
+    } else if (objectivesData) {
+      console.warn('Objectives JSON is not an array:', objectivesData);
+    }
+  } catch (err) {
+    console.error('Error rendering outcomes/objectives:', err);
+    // Optional: show a user-friendly message
+    const outcomesEl = document.querySelector('#outcomes');
+    const objectivesEl = document.querySelector('#objectives');
+    const msg = 'Unable to load this section at the moment.';
+    if (outcomesEl && !outcomesEl.innerHTML.trim()) outcomesEl.textContent = msg;
+    if (objectivesEl && !objectivesEl.innerHTML.trim()) objectivesEl.textContent = msg;
+  }
+}
+
 async function render() {
     const courseId = getQueryParam("course");
     if (!courseId) {
@@ -49,6 +96,49 @@ async function render() {
     setLink("instructor-link", data.instructor.url);
     setText("office-hours", data.course.contact?.officeHours?.label || "Office Hours");
     setLink("zoom-link", data.course.contact?.officeHours?.zoomLink || "#");
+
+    // outcomes and objectives
+    const cloPath = data.course.outcomes;
+    const sloPath = data.course.objectives;
+
+    // --- Render a list (injects a <ul> inside the placeholder element) ---
+    function renderListInto(containerSelectorOrId, items) {
+    // Supports selectors like '#outcomes' or raw IDs like 'outcomes'
+    const selector = containerSelectorOrId.startsWith('#')
+        ? containerSelectorOrId
+        : `#${containerSelectorOrId}`;
+
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    // Build HTML list
+    const html = [
+        '<ul class="list-unstyled ms-3">',
+        ...items.map(item => {
+        const label = item.id ? `<strong>${item.id}</strong>:` : '';
+        const text = getItemText(item);
+        return `<li class="mb-1">${label} ${text}</li>`;
+        }),
+        '</ul>'
+    ].join('');
+
+    // Insert the list inside the existing <p> placeholder
+    container.innerHTML = html;
+    }
+
+    // outcomes and objectives rendering
+    if (cloPath) {
+        const cloData = await fetch(cloPath).then(res => res.json());
+        if (Array.isArray(cloData)) {
+            renderListInto('outcomes', cloData);
+        }
+    }
+    if (sloPath) {
+        const sloData = await fetch(sloPath).then(res => res.json());
+        if (Array.isArray(sloData)) {
+            renderListInto('objectives', sloData);
+        }
+    }
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
