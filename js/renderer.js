@@ -1,13 +1,37 @@
 import { renderTimeline } from 'https://uid100.github.io/timeline/js/timeline.js';
 import { getQueryParam } from "./utils.js";
 import { setTextAll } from "./utils.js";
-import { loadCourseConfig } from "./fetcher.js";
+import { fetchJSON, loadCourseConfig } from "./fetcher.js";
 import { setText, setHTML, setImage, setLink } from "./dom.js";
 
 function resolveCourseAsset(courseId, relativePath) {
     return `https://raw.githubusercontent.com/uid100/${courseId}/main${relativePath}`;
 }
 
+// bullet list into a container element
+function renderListInto(id, items) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  if (!Array.isArray(items) || items.length === 0) {
+    el.textContent = ''; // or a friendly "No items" message
+    return;
+  }
+
+  // Build the list HTML
+  const html = [
+    '<ul class="list-unstyled ms-3">',
+    ...items.map(item => {
+      const label = item.id ? `<strong>${item.id}</strong>:` : '';
+      // Support either "outcome" or "objective" keys
+      const text = item.outcome ?? item.objective ?? item.text ?? '';
+      return `<li class="mb-1">${label} ${text}</li>`;
+    }),
+    '</ul>'
+  ].join('');
+
+  el.innerHTML = html;
+}
 
 async function render() {
     const courseId = getQueryParam("course");
@@ -56,7 +80,19 @@ async function render() {
     const sloPath = data.course.objectives;
     console.log("CLO Path:", cloPath);
     console.log("SLO Path:", sloPath);
-    
+
+    fetchJSON(courseBase + cloPath).then(cloData => {
+        if (Array.isArray(cloData)) {
+            renderListInto('outcomes', cloData);
+        }
+    });
+
+    fetchJSON(courseBase + sloPath).then(sloData => {
+        if (Array.isArray(sloData)) {
+            renderListInto('objectives', sloData);
+        }
+    });
+
     // outcomes and objectives rendering
     // if (cloPath) {
     //     const cloData = await fetch(cloPath).then(res => res.json());
