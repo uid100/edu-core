@@ -4,7 +4,7 @@ export function getQueryParam(name) {
 }
 
 
-function setTextAll(selector, text) {
+export function setTextAll(selector, text) {
   document.querySelectorAll(selector).forEach(el => {
     el.textContent = text ?? '';
   });
