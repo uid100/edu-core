@@ -43,10 +43,12 @@ async function render() {
 
     // Populate instructor
     setText("instructor-name", `${data.instructor.firstName} ${data.instructor.lastName}`);
-    setText("instructor-email", `${data.course.instructorEmail}`);
+    setText("instructor-email", `${data.course.contact.instructorEmail}`);
     setHTML("instructor-about", data.instructor.about);
     setImage("instructor-image", data.instructor.imagePath);
     setLink("instructor-link", data.instructor.url);
+    setText("office-hours", data.course.contact?.officeHours?.label || "Office Hours");
+
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
