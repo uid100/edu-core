@@ -12,11 +12,9 @@ export function resolvePageSpec(course, courseBase, { moduleId, pageId }) {
   // - Absolute URL via "resource"
   // - Course-repo-relative via "source"
   if (pageSpec.resource) {
-    console.log("Resolved page spec:", pageSpec.title, pageSpec.resource);
     return { title: pageSpec.title || "Topic", url: pageSpec.resource };
   }
   if (pageSpec.source) {
-    console.log("Resolved page spec:", pageSpec.source);
     return { title: pageSpec.title || "Topic", url: courseBase + pageSpec.source };
   }
   return null;
