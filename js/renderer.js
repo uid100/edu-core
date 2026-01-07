@@ -21,16 +21,17 @@ async function render() {
     setLink("college-link", data.college.website);
 
     // Populate course
-    setText("course-title", data.course.courseTitle);
-    setText("course-number", data.course.courseNumber);
+    setTextAll(".course-title", data.course.courseTitle);
+    setTextAll(".course-number", data.course.courseNumber);
+    setText("units", data.course.units);
     setHTML("course-about", data.course.description.join("<br><br>"));
     // setImage("cover-image", data.base + data.course.coverImage);
     setImage("cover-image", resolveCourseAsset(courseId, data.course.coverImage));
 
     // Populate section
-    setText("course-term", data.section.term);
-    setText("schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
-    setText("location", data.section.schedule.location);
+    setTextAll(".course-term", data.section.term);
+    setTextAll(".schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
+    setTextAll(".location", data.section.schedule.location);
 
     // Populate textbook
     // setImage("textbook-image", data.base + data.textbook.imagePath);

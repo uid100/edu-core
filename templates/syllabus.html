@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage</title>
+    <title>syllabus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bundle.css">
     <link rel="stylesheet" href="https://uid100.github.io/timeline/css/timeline.css">
-    <!-- homepage 
+    <!-- syllabus template usage example 
     <p>
       <iframe 
         src="https://uid100.github.io/edu-core/templates/syllabus.html?course=palomar-csit175" 
@@ -49,7 +49,7 @@
         </div> <!-- #page-header -->
 
         <div id="course_header">
-            <h2><span id="course-number"></span> Syllabus</h2>
+            <h2><span class="course-number"></span> Syllabus</h2>
             <h3 id="course-title">(course)</h3>
         </div> <!-- #course_header -->
 
@@ -58,9 +58,9 @@
                 <h3 class="card-title" id="course-term"> Term </h3>
                 <p class="card-text">
                 <ul>
-                    <li id="schedule"></li>
-                    <li id="location"></li>
-                    <li id="hyflex" style="display: none;"></li>
+                    <li class="schedule"></li>
+                    <li class="location"></li>
+                    <li class="hyflex" style="display: none;"></li>
                 </ul>
                 </p>
             </div>
@@ -68,8 +68,8 @@
 
         <div id="about-course" class="card mx-auto">
             <div class="card-body">
-                <h3 class="card-title" id="course-number">About</h3>
-                <p class="card-text" id="course-about">
+                <h3 class="card-title" class="course-number">About</h3>
+                <p class="card-text" class="course-about">
                     <!--This course is an introduction to programming. We will cover the
                     basics of programming, including variables, data types, control structures, and functions. We will
                     also cover more advanced topics such as object-oriented programming and data structures.-->
@@ -94,7 +94,7 @@
                 <div class="card-text">
                     <ul>
                         <li>term: <span id="course-term" style="font-style: italic;">(term)</span></li>
-                        <li>course:<span id="course-num" style="font-style: italic;"></span></li>
+                        <li>course:<span id="course-number" style="font-style: italic;"></span></li>
                         <li>units: <span id="units" style="font-style: italic;">(units)</span></li>
                         <li>id: <span id="course-id" style="font-style: italic;"></span></li>
                         <li>section: <span id="section-id" style="font-style: italic;"></span></li>
