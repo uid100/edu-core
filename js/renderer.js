@@ -24,13 +24,14 @@ async function render() {
     // Populate course
     setTextAll(".course-title", data.course.courseTitle);
     setTextAll(".course-number", data.course.courseNumber);
-    setText("units", data.course.units);
+    setTextAll(".units", data.course.units);
     setHTML("course-about", data.course.description.join("<br><br>"));
     // setImage("cover-image", data.base + data.course.coverImage);
     setImage("cover-image", resolveCourseAsset(courseId, data.course.coverImage));
 
     // Populate section
     setTextAll(".course-term", data.section.term);
+    setTextAll(".course-id", data.section.sectionNumber);
     setTextAll(".schedule", `${data.section.schedule.day} ${data.section.schedule.time}`);
     setTextAll(".location", data.section.schedule.location);
 
