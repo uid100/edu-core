@@ -124,6 +124,17 @@ async function render() {
         }
     }
 
+    // outline
+    const outline = data?.course?.topicOutline || {};
+    if (outline != null) {
+        const outlineEl = document.getElementById('outline'); 
+        if ( outlineEl && outline ) {
+            fetchHtmlOrAlert(data.courseBase + outline).then(html => {
+                outlineEl.innerHTML = html;
+            });
+        }
+    }
+
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
     const syllabusUrl = 
