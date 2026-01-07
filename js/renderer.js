@@ -124,6 +124,17 @@ async function render() {
         }
     }
 
+    // accessibility and accommodations
+    const accommodations = data?.course?.accommodations || {};
+    if (accommodations != null) {
+        const accommodationsEl = document.getElementById('accessibility'); 
+        if ( accommodationsEl && accommodations ) {
+            fetchHtmlOrAlert(data.courseBase + accommodations).then(html => {
+                accommodationsEl.innerHTML = html;
+            });
+        }
+    }
+
     // outline
     const outline = data?.course?.topicOutline || {};
     if (outline != null) {
