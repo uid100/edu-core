@@ -112,17 +112,17 @@ async function render() {
     //     : Promise.resolve(),
     // ]);
 
-    const requiredMaterialsPath = data.course.materials.required;
-    const requiredMaterialsElement = document.getElementById('required-materials');
-    fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
-        requiredMaterialsElement.innerHTML = html;
-    });
+    // const requiredMaterialsPath = data.course.materials.required;
+    // const requiredMaterialsElement = document.getElementById('required-materials');
+    // fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
+    //     requiredMaterialsElement.innerHTML = html;
+    // });
 
-    const recommendedMaterialsPath = data.course.materials.recommended;
-    const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
-    fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
-        recommendedMaterialsElement.innerHTML = html;
-    });
+    // const recommendedMaterialsPath = data.course.materials.recommended;
+    // const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
+    // fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
+    //     recommendedMaterialsElement.innerHTML = html;
+    // });
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
