@@ -81,13 +81,13 @@ async function render() {
     console.log("CLO Path:", cloPath);
     console.log("SLO Path:", sloPath);
 
-    fetchJSON(courseBase + cloPath).then(cloData => {
+    fetchJSON( data.courseBase + cloPath).then(cloData => {
         if (Array.isArray(cloData)) {
             renderListInto('outcomes', cloData);
         }
     });
 
-    fetchJSON(courseBase + sloPath).then(sloData => {
+    fetchJSON(data.courseBase + sloPath).then(sloData => {
         if (Array.isArray(sloData)) {
             renderListInto('objectives', sloData);
         }
