@@ -113,6 +113,17 @@ async function render() {
         }
     }
 
+    // grades
+    const grades = data?.course?.gradingDetails || {};
+    if (grades != null) {
+        const gradingEl = document.getElementById('grading-details'); 
+        if ( gradingEl && grades ) {
+            fetchHtmlOrAlert(data.courseBase + grades).then(html => {
+                gradingEl.innerHTML = html;
+            });
+        }
+    }
+
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
     const syllabusUrl = 
