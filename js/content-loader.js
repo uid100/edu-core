@@ -15,6 +15,7 @@ export function resolvePageSpec(course, courseBase, { moduleId, pageId }) {
     return { title: pageSpec.title || "Topic", url: pageSpec.resource };
   }
   if (pageSpec.source) {
+    console.log("Resolved page spec:", pageSpec.source);
     return { title: pageSpec.title || "Topic", url: courseBase + pageSpec.source };
   }
   return null;
