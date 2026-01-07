@@ -43,7 +43,6 @@ async function render() {
 
     const data = await loadCourseConfig(courseId);
 
-    console.log("Loaded college data:");
     // Populate college
     setImage("college-logo", data.college.logoPath);
     setLink("college-link", data.college.website);
@@ -56,7 +55,6 @@ async function render() {
     // setImage("cover-image", data.base + data.course.coverImage);
     setImage("cover-image", resolveCourseAsset(courseId, data.course.coverImage));
 
-    console.log("Loaded section data:");
     // Populate section
     setTextAll(".course-term", data.section.term);
     setTextAll(".course-id", data.section.courseId);
@@ -69,7 +67,6 @@ async function render() {
     setImage("textbook-image", resolveCourseAsset(courseId, data.textbook.imagePath));
     setText("textbook-title", `${data.textbook.title} (${data.textbook.edition})`);
 
-    console.log("Loaded instructor data:");
     // Populate instructor
     setText("instructor-name", `${data.instructor.firstName} ${data.instructor.lastName}`);
     setText("instructor-email", `${data.course.contact.instructorEmail}`);
@@ -96,24 +93,23 @@ async function render() {
     });
 
     // materials
+    const materials = data?.course?.materials || {};
+    const requiredPath = materials.required;
+    const recommendedPath = materials.recommended;
 
-    // const materials = data?.course?.materials || {};
-    // const requiredPath = materials.required;
-    // const recommendedPath = materials.recommended;
-
-    // const requiredEl = document.getElementById('required-materials');
-    // const recommendedEl = document.getElementById('recommended-materials');
+    const requiredEl = document.getElementById('required-materials');
+    const recommendedEl = document.getElementById('recommended-materials');
 
 
-    // // Fetch in parallel; fill only if we got content
-    // await Promise.all([
-    // requiredURL
-    //     ? fetchHtmlOrAlert(requiredURL).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
-    //     : Promise.resolve(),
-    // recommendedURL
-    //     ? fetchHtmlOrAlert(recommendedURL).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
-    //     : Promise.resolve(),
-    // ]);
+    // Fetch in parallel; fill only if we got content
+    await Promise.all([
+    requiredURL
+        ? fetchHtmlOrAlert(requiredURL).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
+        : Promise.resolve(),
+    recommendedURL
+        ? fetchHtmlOrAlert(recommendedURL).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
+        : Promise.resolve(),
+    ]);
 
     // const requiredMaterialsPath = data.course.materials.required;
     // const requiredMaterialsElement = document.getElementById('required-materials');
