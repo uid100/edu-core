@@ -43,6 +43,7 @@ async function render() {
 
     const data = await loadCourseConfig(courseId);
 
+    console.log("Loaded college data:");
     // Populate college
     setImage("college-logo", data.college.logoPath);
     setLink("college-link", data.college.website);
@@ -55,6 +56,7 @@ async function render() {
     // setImage("cover-image", data.base + data.course.coverImage);
     setImage("cover-image", resolveCourseAsset(courseId, data.course.coverImage));
 
+    console.log("Loaded section data:");
     // Populate section
     setTextAll(".course-term", data.section.term);
     setTextAll(".course-id", data.section.courseId);
@@ -67,6 +69,7 @@ async function render() {
     setImage("textbook-image", resolveCourseAsset(courseId, data.textbook.imagePath));
     setText("textbook-title", `${data.textbook.title} (${data.textbook.edition})`);
 
+    console.log("Loaded instructor data:");
     // Populate instructor
     setText("instructor-name", `${data.instructor.firstName} ${data.instructor.lastName}`);
     setText("instructor-email", `${data.course.contact.instructorEmail}`);
