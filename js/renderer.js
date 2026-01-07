@@ -3,6 +3,7 @@ import { getQueryParam } from "./utils.js";
 import { setTextAll } from "./utils.js";
 import { fetchJSON, loadCourseConfig } from "./fetcher.js";
 import { setText, setHTML, setImage, setLink } from "./dom.js";
+import { fetchHtmlOrAlert } from './content-loader.js';
 
 function resolveCourseAsset(courseId, relativePath) {
     return `https://raw.githubusercontent.com/uid100/${courseId}/main${relativePath}`;
@@ -78,8 +79,6 @@ async function render() {
     // outcomes and objectives
     const cloPath = data.course.outcomes;
     const sloPath = data.course.objectives;
-    console.log("CLO Path:", cloPath);
-    console.log("SLO Path:", sloPath);
 
     fetchJSON( data.courseBase + cloPath).then(cloData => {
         if (Array.isArray(cloData)) {
@@ -93,19 +92,18 @@ async function render() {
         }
     });
 
-    // outcomes and objectives rendering
-    // if (cloPath) {
-    //     const cloData = await fetch(cloPath).then(res => res.json());
-    //     if (Array.isArray(cloData)) {
-    //         renderListInto('outcomes', cloData);
-    //     }
-    // }
-    // if (sloPath) {
-    //     const sloData = await fetch(sloPath).then(res => res.json());
-    //     if (Array.isArray(sloData)) {
-    //         renderListInto('objectives', sloData);
-    //     }
-    // }
+    // materials
+    const requiredMaterialsPath = data.course.materials.required;
+    const requiredMaterialsElement = document.getElementById('required-materials');
+    fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
+        requiredMaterialsElement.innerHTML = html;
+    });
+
+    const recommendedMaterialsPath = data.course.materials.recommended;
+    const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
+    fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
+        recommendedMaterialsElement.innerHTML = html;
+    });
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
