@@ -94,34 +94,24 @@ async function render() {
 
     // materials
     const materials = data?.course?.materials || {};
-    const requiredPath = materials.required;
-    const recommendedPath = materials.recommended;
+    if (materials != null) {
+        const requiredPath = materials.required;
+        const recommendedPath = materials.recommended;
 
-    const requiredEl = document.getElementById('required-materials');
-    const recommendedEl = document.getElementById('recommended-materials');
+        const requiredMaterialsEl = document.getElementById('required-materials');
+        if ( requiredMaterialsEl && requiredPath ) {
+            fetchHtmlOrAlert(data.courseBase + requiredPath).then(html => {
+                requiredMaterialsEl.innerHTML = html;
+            });
+        }
 
-
-    // Fetch in parallel; fill only if we got content
-    await Promise.all([
-    requiredURL
-        ? fetchHtmlOrAlert(data.courseBase + requiredPath).then(html => { if (requiredEl) requiredEl.innerHTML = html ?? ''; })
-        : Promise.resolve(),
-    recommendedURL
-        ? fetchHtmlOrAlert(data.courseBase + recommendedPath).then(html => { if (recommendedEl) recommendedEl.innerHTML = html ?? ''; })
-        : Promise.resolve(),
-    ]);
-
-    // const requiredMaterialsPath = data.course.materials.required;
-    // const requiredMaterialsElement = document.getElementById('required-materials');
-    // fetchHtmlOrAlert(data.courseBase + requiredMaterialsPath).then(html => {
-    //     requiredMaterialsElement.innerHTML = html;
-    // });
-
-    // const recommendedMaterialsPath = data.course.materials.recommended;
-    // const recommendedMaterialsElement = document.getElementById('recommended-materials'); 
-    // fetchHtmlOrAlert(data.courseBase + recommendedMaterialsPath).then(html => {
-    //     recommendedMaterialsElement.innerHTML = html;
-    // });
+        const recommendedMaterialsEl = document.getElementById('recommended-materials'); 
+        if ( recommendedMaterialsEl && recommendedPath ) {
+            fetchHtmlOrAlert(data.courseBase + recommendedPath).then(html => {
+                recommendedMaterialsEl.innerHTML = html;
+            });
+        }
+    }
 
     // Buttons
     // setLink("syllabus-button", data.base + data.course.templates.syllabus);
