@@ -127,7 +127,7 @@ async function render() {
     // accessibility and accommodations
     const accommodations = data?.course?.accommodations || {};
     if (accommodations != null) {
-        const accommodationsEl = document.getElementById('accessibility'); 
+        const accommodationsEl = document.getElementById('accessibility-details'); 
         if ( accommodationsEl && accommodations ) {
             fetchHtmlOrAlert(data.courseBase + accommodations).then(html => {
                 accommodationsEl.innerHTML = html;
