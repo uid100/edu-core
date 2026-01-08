@@ -129,8 +129,9 @@ async function render() {
     console.log("accommodations:", accommodations);
     if (accommodations != null) {
         const accommodationsEl = document.getElementById('accessibility-details'); 
-        if ( accommodationsEl && accommodations ) {
+        if ( accommodationsEl ) {
             fetchHtmlOrAlert(data.courseBase + accommodations).then(html => {
+                console.log("render accommodations html.");
                 accommodationsEl.innerHTML = html;
             });
         }
