@@ -126,12 +126,10 @@ async function render() {
 
     // accessibility and accommodations
     const accommodations = data?.course?.accommodations || {};
-    console.log("accommodations:", accommodations);
     if (accommodations != null) {
         const accommodationsEl = document.getElementById('accommodations-details'); 
         if ( accommodationsEl ) {
             fetchHtmlOrAlert(data.courseBase + accommodations).then(html => {
-                console.log("render accommodations html.");
                 accommodationsEl.innerHTML = html;
             });
         }
