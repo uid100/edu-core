@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/course-content/common/css/style.css">
+</head>
+
+<body>
+    <div id="ite-syllabus-template" style="padding:30px;">
+        <header>
+            <h4 id="document-title">SYLLABUS</h4>
+        </header>
+        <p>&nbsp;</p>
+
+        <table>
+            <tr>
+                <td id="courseTitle" colspan="2" class="col-35">
+                    <span style="font-weight:bold">Course Title, Number and Section:</span><br>
+                </td>
+                <td id="term" class="col-35">
+                    <span style="font-weight:bold">Course Year and Term:</span><br>
+                </td>
+            </tr>
+            <tr>
+                <td id="schedule" class="col-35">
+                    <span style="font-weight:bold">Course Meeting Day(s) and Time(s):</span><br>
+                </td>
+                <td id="location" class="col-30">
+                    <span style="font-weight:bold">Class Location:</span><br>
+                </td>
+                <td id="units" class="col-35">
+                    <span style="font-weight:bold">Course Credits:</span><br>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-35"> &nbsp; </td>
+                <td class="col-30"></td>
+                <td class="col-35"></td>
+            </tr>
+            <tr>
+                <td id="instructorName" class="col-35">
+                    <span style="font-weight:bold">Instructor Name:</span><br>
+                </td>
+                <td id="instructorEmail" class=" col-30">
+                    <span style="font-weight:bold">Instructor Email Address:</span><br>
+                </td>
+                <td class="col-35"></td>
+            </tr>
+            <tr>
+                <td id="officeLocation" colspan="2" class="col-35">
+                    <span style="font-weight:bold">Instructor Office Location and Campus Site:</span><br>
+                </td>
+                <td id="officeHours" class="col-35">
+                    <span style="font-weight:bold">Instructor Office Hours:</span><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="col-35"> &nbsp; </td>
+                <td class="col-35"></td>
+            </tr>
+            <tr>
+                <td id="studentLab" colspan="3"></td>
+            </tr>
+        </table>
+
+        <p>&nbsp;</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Course Description</th>
+                    <td class="col-80;" id="courseDescription"></td>
+                </tr>
+                <tr>
+                    <th>Prerequisites</th>
+                    <td class="col-80;" id="prerequisites"></td>
+                </tr>
+                <tr>
+                    <th>Course Objectives Reflecting Expected Student Learning Outcomes</th>
+                    <td class="col-80;" id="courseObjectives">
+                        <p>
+                            These student learning objectives (SLOs) describe specific skills or
+                            knowledge that students will achieve to demonstrate expected course
+                            learning outcomes (CLOs) intended to describe the broader competencies
+                            and achievements resulting from successfully meeting those objectives.
+                        </p>
+                        <div id="goals">
+                            <h5>Objectives</h5>
+                            <p>
+                                The curriculum modules and content are designed to help students:
+                            </p>
+                            <p id="objectives" class="mt-3"></p>
+                        </div> <!-- #goals -->
+                        <div id="reqts" class="mt-3">
+                            <h5>Course Learning Outcomes</h5>
+                            <p>
+                                Upon successful completion of this course, students will be able to:
+                            </p>
+                            <p id="outcomes" class="mt-3"></p>
+                        </div> <!-- #reqts -->
+                    </td>
+                </tr>
+                <tr>
+                    <th>Required Course Materials</th>
+                    <td class="col-80;" id="requiredMaterials"></td>
+                </tr>
+                <tr>
+                    <th>Recommended Course Materials</th>
+                    <td class="col-80;" id="recommendedMaterials"></td>
+                </tr>
+                <tr>
+                    <th>Course Expectations</th>
+                    <td class="col-80;" id="courseExpectations"></td>
+                </tr>
+                <tr>
+                    <th>Policy on AI</th>
+                    <td class="col-80;" id="aiPolicy"></td>
+                </tr>
+                <tr>
+                    <th>Grading Scale and Calculation</th>
+                    <td class="col-80;" id="gradingScale"></td>
+                </tr>
+                <tr>
+                    <th>Course Schedule Overview (Tentative)</th>
+                    <td class="col-80;" id="courseSchedule"></td>
+                </tr>
+                <tr>
+                    <th>Classroom Etiquette</th>
+                    <td class="col-80;" id="classroomEtiquette"></td>
+                </tr>
+                <tr>
+                    <th>Agreement to Syllabus</th>
+                    <td class="col-80;" id="agreement">
+                        This syllabus serves as a contract between you and your instructor, outlining the expectations
+                        and policies for the course. Both parties are expected to adhere to its guidelines.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Critical Dates</th>
+                    <td class="col-80;" id="criticalDates"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- #ite-syllabus-template -->
+
+    <!-- <script src="/course-content/common/js/local.js"></script> -->
+    <script src="/course-content/common/js/sfc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Load table data on page load
+        loadCourseDetails();
+        loadContent();
+    </script>
+</body>
+
+</html>
