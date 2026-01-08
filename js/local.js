@@ -93,8 +93,8 @@ function getQueryParam(param) {
 // Load JSON data and render content
 async function loadAndRenderJSON() {
     console.log("loadAndRenderJSON");
-    const jsonFilePath = getQueryParam('path');
-    const jsonFile = "../edu/" + jsonFilePath + "/content.json";
+    const jsonFilePath = getQueryParam('course');
+    const jsonFile = "http://uid100" + jsonFilePath + "/content.json";
 
     if (!jsonFile) {
         document.getElementById('content').textContent = "Error: No JSON file specified.";
