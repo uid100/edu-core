@@ -128,7 +128,7 @@ async function render() {
     const accommodations = data?.course?.accommodations || {};
     console.log("accommodations:", accommodations);
     if (accommodations != null) {
-        const accommodationsEl = document.getElementById('accessibility-details'); 
+        const accommodationsEl = document.getElementById('accommodations-details'); 
         if ( accommodationsEl ) {
             fetchHtmlOrAlert(data.courseBase + accommodations).then(html => {
                 console.log("render accommodations html.");
