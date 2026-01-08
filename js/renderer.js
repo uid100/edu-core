@@ -126,6 +126,7 @@ async function render() {
 
     // accessibility and accommodations
     const accommodations = data?.course?.accommodations || {};
+    console.log("accommodations:", accommodations);
     if (accommodations != null) {
         const accommodationsEl = document.getElementById('accessibility-details'); 
         if ( accommodationsEl && accommodations ) {
