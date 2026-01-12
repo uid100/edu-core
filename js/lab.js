@@ -19,13 +19,13 @@ function resolveLabSpec(course, courseBase, { moduleId, labId }) {
     }
   }
 
-  // Optional flat labs fallback (not required by your current schema)
-  const flatLab = course?.content?.labs?.[labId];
-  if (flatLab) {
-    return composeContentSpec(flatLab, courseBase, {
-      fallbackTitle: flatLab.title || course.courseTitle || "Lab"
-    });
-  }
+  // // Optional flat labs fallback
+  // const flatLab = course?.content?.labs?.[labId];
+  // if (flatLab) {
+  //   return composeContentSpec(flatLab, courseBase, {
+  //     fallbackTitle: flatLab.title || course.courseTitle || "Lab"
+  //   });
+  // }
 
   return null;
 }
