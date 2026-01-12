@@ -246,8 +246,8 @@ async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
       mount.innerHTML = `
         <div class="alert alert-warning" role="alert">
           Lab content not found in <code>${courseId}/course.json</code> under
-          <code>content.modules["${moduleId}"].exercises.${labId || "lab"}</code>.
-        </div>`;
+          <code>content.modules["${moduleId}"].${labId || "lab"}</code>.
+        </div>`
     }
     return;
   }
