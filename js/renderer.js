@@ -48,6 +48,7 @@ async function render() {
     setLink("college-link", data.college.website);
 
     // Populate course
+    console.log(data.course.courseTitle);
     setTextAll(".course-title", data.course.courseTitle);
     setTextAll(".course-number", data.course.courseNumber);
     setTextAll(".units", data.course.units);
