@@ -9,6 +9,7 @@ import { setText } from "./dom.js";
  * - Optional fallback: course.content.labs[labId] if you ever use a flat structure.
  */
 function resolveLabSpec(course, courseBase, { moduleId, labId }) {
+  console.log("Resolving lab spec for module:", moduleId, "lab:", labId || "lab");
   const moduleSpec = course?.content?.modules?.[moduleId];
   if (moduleSpec) {
     const labSpec = moduleSpec[labId || "lab"];
@@ -38,6 +39,7 @@ function resolveLabSpec(course, courseBase, { moduleId, labId }) {
  *  - Flexible source object: { source: { type, baseUrl, repo, taskList, fragments } }
  */
 function composeContentSpec(spec, courseBase, { fallbackTitle }) {
+  console.log("Composing content spec for:", spec);
   // Variant A: absolute URLs
   if (spec.taskListUrl && spec.fragmentsBase) {
     return {
@@ -212,6 +214,7 @@ async function renderLabAccordion({ taskListUrl, fragmentsBase }) {
 }
 
 (async function initLab() {
+  console.log("Initializing lab...");
   const courseId = getQueryParam("course");
   const moduleId = getQueryParam("module"); // required by your schema
   const labId    = getQueryParam("lab");    // optional: choose exercises[labId]; defaults to "lab"
