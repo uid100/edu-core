@@ -10,9 +10,8 @@ import { setText } from "./dom.js";
  */
 function resolveLabSpec(course, courseBase, { moduleId, labId }) {
   const moduleSpec = course?.content?.modules?.[moduleId];
-  if (moduleSpec?.exercises) {
-    const key = labId || "lab";
-    const labSpec = moduleSpec.exercises[key];
+  if (moduleSpec) {
+    const labSpec = moduleSpec[labId || "lab"];
     if (labSpec) {
       return composeContentSpec(labSpec, courseBase, {
         fallbackTitle: labSpec.title || moduleSpec.title || course.courseTitle || "Lab"
