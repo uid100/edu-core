@@ -12,8 +12,10 @@ function resolveLabSpec(course, courseBase, { moduleId, labId }) {
   console.log("Resolving lab spec for module:", moduleId, "lab:", labId || "lab");
   const moduleSpec = course?.content?.modules?.[moduleId];
   if (moduleSpec) {
+    console.log("Found module spec:", moduleSpec);
     const labSpec = moduleSpec[labId || "lab"];
     if (labSpec) {
+      console.log("Found lab spec:", labSpec);
       return composeContentSpec(labSpec, courseBase, {
         fallbackTitle: labSpec.title || moduleSpec.title || course.courseTitle || "Lab"
       });
