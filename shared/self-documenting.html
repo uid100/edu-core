@@ -1,0 +1,178 @@
+<div class="container py-4">
+  <h1 class="mb-4">Understanding Self-Documenting Code</h1>
+  <!-- Traditional Commenting Problems -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Traditional Commenting</h5>
+      <p class="card-text">
+        Traditionally, codebases relied extensively on comments to describe what the code was doing. Although comments can be useful,
+        excessive or poorly maintained comments can get in the way of readability and introduce conflicting information. If the code
+        changes and the comments are neglected, the comments may become misleading or completely incorrect. In these circumstances,
+        comments shift from being helpful guidance to actively harmful clutter, obscuring the intent of the code and wasting a
+        developer’s time.
+      </p>
+    </div>
+  </div>
+
+  <!-- What is self-documenting code -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">What Is Self-Documenting Code?</h5>
+      <p class="card-text">
+        Self-documenting code is written so that its purpose is clear without requiring supplemental comments. Rather than relying on
+        explanations, the code communicates its intent through meaningful variable names, descriptive function and method signatures,
+        clear logical structure, and consistency. When done well, another developer—or even your future self—can understand what the code
+        is doing simply by reading it.
+      </p>
+      <p class="card-text">
+        Self-documenting code is also easier to troubleshoot and maintain. Clear naming and structure reduce the cognitive load for
+        readers, which not only accelerates debugging and onboarding but also decreases the likelihood of errors introduced through
+        misunderstanding. In practice, codebases that prioritize clarity tend to be more stable, safer to refactor, and cheaper to
+        maintain.
+      </p>
+    </div>
+  </div>
+
+  <!-- Variable Naming -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">The Role of Variable Naming</h5>
+      <p class="card-text">
+        Variable naming is an essential aspect of self-documenting code. A well-named variable is clear anywhere it appears within the
+        codebase, and usually suggests not only the content but also the type. Consider how much easier it is to understand code when the
+        variables describe their purpose instead of being cryptic placeholders.
+      </p>
+
+      <!-- Inset Card -->
+      <div class="card ms-4 my-3 border-secondary">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Example Variable Naming Exercise</h6>
+          <p class="card-text">Which of the following is the best variable name for storing the count of active users in a web application?</p>
+          <ol class="mb-2">
+            <li><code>x</code></li>
+            <li><code>numUsers</code></li>
+            <li><code>activeUserCount</code></li>
+            <li><code>auc</code></li>
+          </ol>
+          <p class="card-text">
+            <strong>Correct answer: <code>activeUserCount</code></strong> — this name is unambiguous in any context and suggests both the
+            content (active users) and the type/format (a count, i.e., numeric).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Methods and Functions -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Functions and Method Names</h5>
+      <p class="card-text">
+        Properly named functions and methods should make their behavior and return values clear. A good function name suggests the
+        parameters it expects and the type of value it returns. For example, a function named <code>getTotalOrderPrice(orderItems)</code>
+        gives a clear idea of what arguments it takes and that it returns a numeric total price. In contrast, a function named
+        <code>calc</code> or <code>doStuff</code> provides no meaningful information to the reader.
+      </p>
+    </div>
+  </div>
+
+  <!-- Simple Examples -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Code Examples</h5>
+
+      <p class="fw-semibold mt-3 mb-1">Poorly Documented Code with Heavy Comments</p>
+      <pre class="p-2 rounded">
+int x = 0; // x tracks the number of users
+for (int i = 0; i &lt; users.size(); i++) { // loop through users
+  if (users[i].isActive()) { // if active
+    x++; // increment x
+  }
+}
+      </pre>
+
+      <p class="fw-semibold mt-3 mb-1">Self-Documenting Version (Few or No Comments Needed)</p>
+      <pre class="p-2 rounded">
+int activeUserCount = 0;
+for (const User&amp; user : users) {
+  if (user.isActive()) {
+    activeUserCount++;
+  }
+}
+      </pre>
+    </div>
+  </div>
+
+    <!-- Identifiers Beyond Variables -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">All Identifiers Should Be Clear and Descriptive</h5>
+      <p class="card-text">
+        Self-documenting code is not limited to variable naming. <strong>All identifiers</strong> in a codebase should be clear,
+        descriptive, and unambiguous. This includes variable names, function and method names, constants, class names,
+        modules, and even file names.
+      </p>
+      <p class="card-text">
+        For example, a function named <code>calculateShippingCost()</code> communicates its purpose and suggests it returns
+        a numeric value. A constant named <code>MAX_UPLOAD_SIZE_MB</code> clearly conveys meaning, making it easier to
+        understand constraints in the code. Meanwhile, ambiguous names force the reader to search for context or make
+        assumptions, which wastes time and increases the likelihood of mistakes.
+      </p>
+      <p class="card-text">
+        The clarity principle also applies to file organization. A directory full of files named like
+        <code>lab6exercise2</code>, <code>finalprojV3</code>, or <code>stuff</code> does little to reveal their contents.
+        In contrast, filenames such as <code>user_auth_controller.py</code> or <code>payment_processing_tests.cpp</code>
+        allow a developer to identify purpose at a glance without opening anything.
+      </p>
+      <p class="card-text">
+        Clear identifiers create codebases that are quicker to navigate, easier to search, and more pleasant to maintain.
+        When every name communicates meaning, developers spend less time decoding intent and more time building solutions.
+      </p>
+    </div>
+  </div>
+
+  <!-- Final Thoughts -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Final Thoughts</h5>
+      <p class="card-text">
+        Self-documenting code does not eliminate the need for comments entirely—there will always be situations where comments clarify
+        decisions, assumptions, or domain-specific context. However, by prioritizing clarity in naming, structure, and logic, developers
+        minimize dependency on comments and create code that naturally communicates intent. The result is software that is easier to
+        read, safer to modify, and more pleasant to work with.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+        <div class="card-header">Self-Documenting Code - Summary</div>
+        <div class="card-body">
+            <h1>Self-Documenting Code</h1>
+            <p>
+                Writing self-documenting code means creating code that is easy to read and understand without the need for extensive comments or external documentation. This can be achieved through clear naming conventions, consistent formatting, and thoughtful structuring of code.
+            </p>
+            <h2>Benefits of Self-Documenting Code</h2>
+            <ul>
+                <li><strong>Improved Readability:</strong> Code that is easy to read helps developers quickly understand its purpose and functionality.</li>
+                <li><strong>Reduced Maintenance Effort:</strong> When code is self-explanatory, it reduces the time and effort required for maintenance and updates.</li>
+                <li><strong>Enhanced Collaboration:</strong> Clear code facilitates better collaboration among team members, as everyone can easily grasp the logic and flow.</li>
+            </ul>
+            <h2>Best Practices</h2>
+            <ol>
+                <li><strong>Use Descriptive Names:</strong> Choose meaningful names for variables, functions, and classes that convey their purpose.</li>
+                <li><strong>Keep Functions Short:</strong> Limit functions to a single responsibility to make them easier to understand.</li>
+                <li><strong>Consistent Formatting:</strong> Follow a consistent coding style and formatting guidelines to enhance readability.</li>
+                <li><strong>Avoid Deep Nesting:</strong> Minimize nested structures to reduce complexity and improve clarity.</li>
+                <li><strong>Use Clear Logic:</strong> Write straightforward logic that is easy to follow without unnecessary complexity.</li>
+            </ol>
+        </div> <!-- card-body -->
+    </div> <!-- card -->
+</div> <!-- container -->
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
