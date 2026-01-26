@@ -1,0 +1,107 @@
+<div class="container py-4">
+
+  <h1 class="mb-4">Avoiding Magic Numbers in Code</h1>
+
+  <!-- Introduction -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">What Are “Magic Numbers”?</h5>
+      <p class="card-text">
+        In programming, a <strong>magic number</strong> is a literal numeric (or sometimes string) value that
+        appears in code without explanation. These values force future readers to guess their meaning
+        and often make code confusing, fragile, and error-prone. Although the term is widely used
+        across many languages, the underlying problem is the same: unexplained values undermine code clarity.
+      </p>
+    </div>
+  </div>
+
+  <!-- Why Magic Numbers Are a Problem -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Why Magic Numbers Are Harmful</h5>
+      <p class="card-text">
+        Magic numbers create several maintainability issues:
+      </p>
+      <ul>
+        <li><strong>No context:</strong> Readers cannot tell what the value represents or why it exists.</li>
+        <li><strong>Difficult to update:</strong> If the value needs to change, it must be found in multiple places.</li>
+        <li><strong>Error-prone:</strong> A change in one location but not another introduces inconsistent behavior.</li>
+        <li><strong>Brittle logic:</strong> Code becomes dependent on hidden assumptions that are easy to break.</li>
+      </ul>
+      <p class="card-text">
+        For example, a line that multiplies a variable by <code>0.0825</code> could mean sales tax, interest,
+        or something else entirely. Without context, developers must guess.
+      </p>
+    </div>
+  </div>
+
+  <!-- Using Named Constants Instead -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Readable Code Through Named Constants</h5>
+      <p class="card-text">
+        A recommended practice is to replace magic numbers with <strong>clear, descriptive, named constants</strong>.
+        In Python courses, constants are typically written in UPPER_SNAKE_CASE (e.g., <code>MAX_RETRIES</code>),
+        while in other languages the convention may vary. Regardless of syntax, the goal is the same:
+        <strong>make the meaning obvious</strong>.
+      </p>
+      <p class="card-text">
+        With named constants:
+      </p>
+      <ul>
+        <li>The intent is immediately understood.</li>
+        <li>The value is defined once, in a single location.</li>
+        <li>If the value changes, it is updated only once.</li>
+        <li>The code becomes easier to read, maintain, and modify.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Example: Sales Tax -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Example: Changing Values Over Time</h5>
+      <p class="card-text">
+        Consider a local sales tax rate. Local tax rates can change annually (or more often),
+        vary by city or county, and differ by state. A magic number such as <code>0.0825</code> buried deep
+        in the code is <strong>very difficult to find</strong> later.
+      </p>
+      <p class="card-text">
+        A clear constant such as:
+        <br>
+        <code>LOCAL_SALES_TAX</code>
+        <br>
+        communicates meaning everywhere it appears. When the rate changes, only one value needs updating.
+      </p>
+      <p class="card-text">
+        Other values that change frequently and should not be magic numbers include:
+      </p>
+      <ul>
+        <li><code>INTEREST_RATE</code> (financial applications)</li>
+        <li><code>MAX_UPLOAD_SIZE_MB</code> (web applications)</li>
+        <li><code>PASSWORD_MIN_LENGTH</code> or <code>PASSWORD_MAX_ATTEMPTS</code> (security settings)</li>
+        <li><code>FRAME_RATE</code> or <code>MAX_SPEED</code> (games or simulations)</li>
+      </ul>
+      <p class="card-text">
+        When constants are clearly named, they remain meaningful no matter where they appear in the program.
+      </p>
+    </div>
+  </div>
+
+  <!-- Applies Across Languages -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Language-Agnostic Good Practice</h5>
+      <p class="card-text">
+        Although this discussion is intended for a college Python course, the principle applies across
+        most major programming languages. Whether writing Python, JavaScript, Java, C++, C#, Go, or others,
+        software engineers are expected to avoid unexplained literals and instead name values that matter.
+      </p>
+      <p class="card-text">
+        Good code communicates its purpose without requiring detective work. Replacing magic numbers with
+        well-named constants is a small habit that leads to cleaner, safer, and more professional software.
+      </p>
+    </div>
+  </div>
+
+</div>
