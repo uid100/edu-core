@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C++ Conditionals: if / else-if / else — Logical Operators & Nesting</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Highlight.js for code syntax highlighting (C++) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+  <style>
+    body { background-color:#f8f9fa; }
+    pre { position: relative; }
+    .copy-btn {
+      position: absolute; top: .5rem; right: .5rem;
+      z-index: 5; font-size: .8rem;
+    }
+    .xsidebar { position: sticky; top: 1rem; }
+    .card + .card { margin-top: 1rem; }
+    .kbd-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:#e9ecef; border-radius:.25rem; padding:.1rem .35rem;
+    }
+    code.language-cpp { font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+
+  <!-- Content -->
+  <div class="container">
+      <!-- Overview -->
+      <div class="card" id="overview">
+        <div class="card-header">Overview</div>
+        <div class="card-body">
+          <p>
+            Conditional statements in C++ let your program make decisions.
+            <ul style="margin: 20px;">The most common forms are:
+              <li>if</li>
+              <li>if / else</li>
+              <li>if / else if / else</li>
+            </ul>
+          </p>
+          <p>
+            <ul style="list-style-type: none;">
+              <li><code>if</code> checks a condition and runs code if it’s true.</li>
+              <li><code>else</code> provides an alternate path when the <code>if</code> condition is false.</li>
+              <li><code>else if</code> lets you chain multiple conditions in a clear, mutually exclusive way.</li>
+            </ul>
+            </p>
+          <p>
+            <ul>
+              You can also combine conditions with logical operators
+              <li>&& (AND),</li>
+              <li>|| (OR),</li>
+              <li>! (NOT),</li>
+            ... and occasionally nest conditions for more complex logic.
+            </ul>
+          </p>
+        </div> <!-- card-body -->
+      </div> <!-- card -->
+
+      <!-- if -->
+      <div class="card" id="if">
+        <div class="card-header"><code>if</code></div>
+        <div class="card-body">
+          <p>
+            Use <code>if</code> when you want to execute code only if a condition is true.
+          </p>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Example: Alert if temperature exceeds threshold
+  #include &lt;iostream&gt;
+  int main() {
+    int temperature = 78;
+    int threshold   = 75;
+
+    if (temperature &gt; threshold) {
+        std::cout &lt;&lt; "Warning: Hot!\n";
+    }
+
+    // Code continues regardless...
+    std::cout &lt;&lt; "Done.\n";
+  }
+  </code></pre>
+          </div>
+          <ul>
+            <li>Condition expressions evaluate to <code>true</code> (non-zero) or <code>false</code> (zero).</li>
+            <li>Always use braces <code>{ }</code> for clarity, even for single statements.</li>
+          </ul>
+        </div> <!-- card-body -->
+      </div> <!-- card -->
+
+      <!-- if/else -->
+      <div class="card" id="if-else">
+        <div class="card-header"><code>if / else</code></div>
+        <div class="card-body">
+          <p>
+            <code>else</code> runs when the <code>if</code> condition is false—ensuring exactly one branch executes.
+          </p>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Example: Even / Odd
+  #include &lt;iostream&gt;
+  int main() {
+    int n = 42;
+
+    if (n % 2 == 0) {
+        std::cout &lt;&lt; n &lt;&lt; " is even\n";
+    } else {
+        std::cout &lt;&lt; n &lt;&lt; " is odd\n";
+    }
+  }
+  </code></pre>
+          </div>
+          <p class="mb-0">
+            <strong>Tip:</strong> Prefer clear branching over cleverness. 
+              A ternary operator (<code>cond ? a : b</code>) is fine for short expressions but don’t overuse it.
+          </p>
+        </div> <!-- card-body -->
+      </div> <!-- card -->
+
+      <!-- else-if ladder -->
+      <div class="card" id="else-if">
+        <div class="card-header"><code>if / else if / else</code> </div>
+        <div class="card-body">
+          <p>
+            Chain mutually exclusive conditions with <code>else if</code>, finishing with an optional 
+            <code>else</code> for “none of the above.”
+          </p>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Example: Letter grade
+  #include &lt;iostream&gt;
+  int main() {
+    int score = 86;
+
+    if (score &gt;= 90) {
+        std::cout &lt;&lt; "A\n";
+    } else if (score &gt;= 80) {
+        std::cout &lt;&lt; "B\n";
+    } else if (score &gt;= 70) {
+        std::cout &lt;&lt; "C\n";
+    } else if (score &gt;= 60) {
+        std::cout &lt;&lt; "D\n";
+    } else {
+        std::cout &lt;&lt; "F\n";
+    }
+  }
+  </code></pre>
+          </div>
+          <ul class="mb-0">
+            <li>Order matters: once one condition is true, the rest are skipped.</li>
+            <li>Use <code>else if</code> (not separate <code>if</code> statements) when cases are mutually exclusive.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Logical operators -->
+      <div class="card" id="logical">
+        <div class="card-header">Logical Operators &amp; Short-Circuiting</div>
+        <div class="card-body">
+          <p><strong>Logical operators</strong> combine conditions:</p>
+          <ul>
+            <li><code>&amp;&amp;</code> (AND): true only if both operands are true. <em>Short-circuits</em>—if the left is false, the right is not evaluated.</li>
+            <li><code>||</code> (OR): true if at least one operand is true. <em>Short-circuits</em>—if the left is true, the right is not evaluated.</li>
+            <li><code>!</code> (NOT): inverts a boolean.</li>
+          </ul>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Example: Safe checks with short-circuiting
+  #include &lt;iostream&gt;
+  #include &lt;vector&gt;
+  bool expensiveTest() {
+    std::cout &lt;&lt; "[expensiveTest]\n";
+    // Imagine slow I/O or complex math here...
+    return true;
+  }
+  int main() {
+    std::vector&lt;int&gt; data {1, 2, 3};
+
+    // Using &&: cheap check first prevents out-of-range access
+    if (!data.empty() &amp;&amp; data[0] == 1) {
+        std::cout &lt;&lt; "First element is 1\n";
+    }
+
+    // Using ||: if left is true, right is skipped
+    bool ready = true;
+    if (ready || expensiveTest()) {
+        std::cout &lt;&lt; "Proceed (expensiveTest skipped if ready==true)\n";
+    }
+  }
+  </code></pre>
+          </div>
+          <p class="mb-0"><strong>Best practice:</strong> Put <em>cheap</em> (and safety) checks on the left so short-circuiting can skip expensive or unsafe work.</p>
+        </div> <!-- card-body -->
+      </div> <!-- card -->
+
+      <!-- Nested if -->
+      <div class="card" id="nested">
+        <div class="card-header">Nested <code>if</code></div>
+        <div class="card-body">
+          <p>Nesting lets you express a decision tree: decide broadly, then refine inside. Keep nesting shallow for readability.</p>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Example: Role-based action with validation
+  #include &lt;iostream&gt;
+  #include &lt;string&gt;
+  int main() {
+    std::string role = "admin";
+    bool authenticated = true;
+
+    if (authenticated) {
+        if (role == "admin") {
+            std::cout &lt;&lt; "Admin panel\n";
+        } else if (role == "editor") {
+            std::cout &lt;&lt; "Editor workspace\n";
+        } else {
+            std::cout &lt;&lt; "Viewer dashboard\n";
+        }
+    } else {
+        std::cout &lt;&lt; "Please sign in.\n";
+    }
+  }
+  </code></pre>
+          </div>
+          <p class="mb-0">
+            Consider refactoring deeply nested chains into functions, early returns, or <code>switch</code> (for integral/enumeration keys) to improve clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Patterns & Pitfalls -->
+      <div class="card" id="pitfalls">
+        <div class="card-header">Common Patterns &amp; Pitfalls</div>
+        <div class="card-body">
+          <h6 class="mt-0">1) The “dangling else” — always use braces</h6>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Ambiguous without braces:
+  if (x &gt; 0)
+    if (x &gt; 10)
+      std::cout &lt;&lt; "big\n";
+    else
+      std::cout &lt;&lt; "non-positive?\n"; // else binds to inner if (not outer)
+
+  // Clear with braces:
+  if (x &gt; 0) {
+    if (x &gt; 10) {
+        std::cout &lt;&lt; "big\n";
+    } else {
+      std::cout &lt;&lt; "small positive\n";
+    }
+  } else {
+    std::cout &lt;&lt; "non-positive\n";
+  }
+  </code></pre>
+          </div>
+
+          <h6>2) Assignment vs equality</h6>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Common bug: using = instead of ==
+  bool flag = false;
+  if (flag = true) {           // assigns true; condition always true
+    // ...
+  }
+
+  // Correct:
+  if (flag == true) { /* ... */ }
+
+  // or simply:
+  if (flag) { /* ... */ }
+  </code></pre>
+          </div>
+
+          <h6>3) Floating-point comparisons</h6>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">#include &lt;cmath&gt;
+
+  double a = 0.1 * 3.0; // might not be exactly 0.3 due to FP representation
+  double b = 0.3;
+  const double eps = 1e-9;
+  if (std::abs(a - b) &lt; eps) {
+    // treat as equal
+  }
+  </code></pre>
+          </div>
+
+          <h6>4) Prefer early returns to reduce nesting</h6>
+          <div style="padding: 20px;">
+            <pre><code class="language-cpp">// Instead of deeply nested ifs:
+  bool validate(User* u) {
+    if (u != nullptr) {
+        if (u-&gt;active) {
+            if (u-&gt;age &gt;= 18) {
+                return true;
+            }
+        }
+    }
+    return false;
+  }
+
+  // Use guards and early returns:
+  bool validate(User* u) {
+    if (u == nullptr) return false;
+    if (!u-&gt;active) return false;
+    if (u-&gt;age &lt; 18) return false;
+    return true;
+  }
+  </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Exercises -->
+      <div class="card" style="display: none;">
+        <div class="card-header">Quick Practice</div>
+        <div class="card-body">
+          <ol class="mb-0">
+            <li>
+              Write an <code>if/else</code> that prints “leap year” if a year is divisible by 400, or divisible by 4 
+              but not by 100; otherwise “not leap year”.</li>
+            <li>
+              Given an input character, print “digit”, “letter”, or “other”. (Use an <code>else if</code> chain.)</li>
+            <li>
+              Combine checks: if a vector is non-empty and its last element is even, print it. Ensure you don't access 
+              out of range.</li>
+            <li>
+              Refactor a 5-branch <code>else if</code> ladder into a <code>switch</code> if the key is an 
+              <code>enum class</code>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="card" style="display: none;">
+      <div class="card-header bg-light">Sidebar: Prioritize Conditions for Efficiency</div>
+      <div class="card-body">
+        <p class="mb-2">
+          When ordering an <code>if</code> ladder or a compound condition, evaluate from
+          <strong>least complex &amp; most selective</strong> to <strong>most complex</strong> so you can exit early (via <em>short-circuiting</em>) and avoid expensive work.
+        </p>
+        <ol>
+          <li><strong>Safety first:</strong> Guard against invalid states (e.g., null pointers, empty containers, index bounds).</li>
+          <li><strong>Cheap checks next:</strong> Booleans, flags, simple integer/range comparisons.</li>
+          <li><strong>Moderate checks:</strong> Small string compares, small set membership.</li>
+          <li><strong>Expensive checks last:</strong> I/O, regex, heavy computation, database calls.</li>
+        </ol>
+
+        <div style="padding: 20px;">
+          <pre><code class="language-cpp">// Good: safe & cheap before expensive
+  if (ptr != nullptr &amp;&amp; ptr-&gt;ready &amp;&amp; isSmallCase() &amp;&amp; heavyCompute()) {
+  // ...
+  }
+
+  // Edge-case short-circuit examples
+  if (!vec.empty() &amp;&amp; vec.back() % 2 == 0) { /* safe & quick */ }
+
+  bool cacheHit = hasCacheKey(k);
+  if (cacheHit || fetchFromNetwork(k)) { /* avoid network if possible */ }
+
+  // Ordering in else-if ladder (mutually exclusive):
+  if (error) { /* quickest exit */ }
+  else if (warning) { /* less likely but simple */ }
+  else if (needsRebuild()) { /* potentially expensive */ }
+  else { /* default */ }
+  </code></pre>
+        </div>
+
+        <p class="mt-3 mb-1"><strong>Why it matters:</strong></p>
+        <ul class="mb-0">
+          <li>Short-circuiting with <code>&amp;&amp;</code> and <code>||</code> can skip unnecessary or unsafe work.</li>
+          <li>Ordering improves performance on common paths and prevents rare-but-costly edge cases.</li>
+          <li>Makes intent clearer to readers (“guard” first, “happy path” next).</li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- /container -->
