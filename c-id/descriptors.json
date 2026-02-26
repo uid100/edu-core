@@ -1,0 +1,181 @@
+{
+    "COMP112": {
+        "descriptor": {
+            "title": "Introduction to Programming Concepts and Methodologies",
+            "C-ID Number": 112,
+            "units": 3,
+            "link": "https://data-c-idsystem.org/descriptors/final/show/340"
+        },
+        "Description": "This course must be taught using an object-oriented programming language. Its purpose is to expose students to the fundamental concepts of programming.",
+        "Prerequisites": "None",
+        "Corequisites": "None",
+        "Advisories": "Basic knowledge of computer usage",
+        "Content": [
+            {"1": "Software life-cycle including design, development, styles, documentation, testing and maintenance"},
+            {"2": "Procedural versus objected oriented programming",
+                "topics": [
+                    {"a": "Survey of current languages"}]},
+            {"3": "Program design tools and programming environments"},
+            {"4": "Documentation"},
+            {"5": "Coding conventions"},
+            {"6": "Data types, variables, expressions, sequential processing"},
+            {"7": "Arrays",
+                "topics": [
+                    {"a": "Declaring and allocating arrays"},
+                    {"b": "Multiple-subscripted arrays"}]},
+            {"8": "Control structure",
+                "topics": [
+                    {"a": "Selective structures: if and switch"},
+                    {"b": "Repetitive structures: loops"}]},
+            {"9": "Algorithms including simple sorting and searching"},
+            {"10": "File I/O",
+                "topics": [
+                    {"a": "Files and streams"},
+                    {"b": "Sequential access files"}]},
+            {"11": "Error handling"},
+            {"12": "Passing parameters by value and by reference"},
+            {"13": "Principles of testing and designing test data"}
+        ],
+        "Objectives": {
+            "goal statement":"At the conclusion of this course, the student should be able to",
+            "outcomes": [
+                "Describe the software development life-cycle.",
+                "Describe the principles of structured programming and be able to describe, design, implement, and test structured programs using currently accepted methodology.",
+                "Explain what an algorithm is and its importance in computer programming."
+            ]
+        },
+        "Evaluation Methods": [
+                "Exams",
+                "Quizzes",
+                "Programming Projects",
+                "Discussions",
+                "Class Presentations"
+        ],
+        "Textbooks": [
+            "Savitch, Walter: Problem Solving with C++ Latest Edition",
+            "Deitel, H.M. & Deitel, P.J. (2010). C++ : How to Program (paper) (7th ed.). [ISBN: 0136117260]"
+        ]
+    },
+    "COMP122": {
+        "descriptor": {
+            "title": "Programming Concepts and Methodology I",
+            "C-ID Number": 122,
+            "units": 3,
+            "link": "https://data-c-idsystem.org/descriptors/final/show/341"
+        },
+        "Description": "Introduces the discipline of computer science using a high level language utilizing programming and practical hands-on problem solving.",
+        "Prerequisites": "None",
+        "Corequisites": "None",
+        "Advisories": "COP 112 (CS0) or Comparable Experience",
+        "Content": {
+            "I. Programming Fundamentals (PF)": {
+                "PF1. Fundamental Programming Constructs": {
+                    "minimum coverage time": "9 hours",
+                    "topics": [
+                        "1. Basic syntax and semantics of a higher-level language",
+                        "2. Variables, types, expressions, and assignment",
+                        "3. Simple I/O",
+                        "4. Conditional and iterative control structures",
+                        "5. Functions and parameter passing",
+                        "6. Structured decomposition"
+                    ],
+                    "learning outcomes": [
+                        "1. Analyze and explain the behavior of simple programs involving the fundamental programming constructs covered by this unit",
+                        "2. Modify and expand short programs that use standard conditional and iterative control structures and functions;",
+                        "3. Design, implement, test, and debug a program that uses each of the following fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and the definition of functions;",
+                        "4. Choose appropriate conditional and iteration constructs for a given programming task;",
+                        "5. Apply the techniques of structured (functional) decomposition to break a program into smaller pieces; and",
+                        "6. Describe the mechanics of parameter passing. "
+                    ]
+                },
+                "PF2. Algorithms and Problem Solving": {
+                    "minimum coverage time": "6 hours",
+                    "topics": [
+                        "1. Problem-solving strategies",
+                        "2. The role of algorithms in the problem-solving process",
+                        "3. Implementation strategies for algorithms",
+                        "4. Debugging strategies",
+                        "5. The concept and properties of algorithms"
+                    ],
+                    "learning outcomes": [
+                        "1. Discuss the importance of algorithms in the problem-solving process;",
+                        "2. Identify the necessary properties of good algorithms;",
+                        "3. Create algorithms for solving simple problems;",
+                        "4. Use pseudocode or a programming language to implement, test, and debug algorithms for solving simple problems; and",
+                        "5. Describe strategies that are useful in debugging."
+                    ]
+                }
+            },
+            "II. Programming Languages (PL)": {
+                "PL1. Overview of Programming Languages": {
+                    "minimum coverage time": "2 hours",
+                    "topics": [
+                        "1. History of programming languages",
+                        "2. Brief survey of programming paradigms",
+                        "3. Procedural languages",
+                        "4. Object-oriented languages"
+                    ],
+                    "learning outcomes": [
+                        "1. Summarize the evolution of programming languages illustrating how this history has led to the paradigms available today;",
+                        "2. Identify at least one distinguishing characteristic for each of the programming paradigms covered in this unit."
+                    ]
+                },
+                "PL4. Declarations and Types": {
+                    "minimum coverage time": "3 hours",
+                    "topics": [
+                        "1. The conception of types as a set of values together with a set of operations",
+                        "2. Declaration models (binding, visibility, scope, and lifetime)",
+                        "3. Overview of type-checking"
+                    ],
+                    "learning outcomes": [
+                        "1. Explain the value of declaration models, especially with respect to programming-in-the-large;",
+                        "2. Identify and describe the properties of a variable such as its associated address, value, scope, persistence, and size;",
+                        "3. Discuss type incompatibility;",
+                        "4. Demonstrate different forms of binding, visibility, scoping, and lifetime management; and",
+                        "5. Defend the importance of types and type-checking in providing abstraction and safety"
+                    ]
+                }
+            },
+            "note": "Topics fulfilling these tasks and outcomes could include OOPS and other programming elements.  This course is recommended to contain hands-on programming and problem solving tasks."
+        },
+        "Objectives": {
+            "goal statement": "At the conclusion of this course, the student should be able to",
+            "outcomes": [
+                "Design, implement, test, and debug a program that uses each of the following fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and the definition of functions;",
+                "Use pseudocode or a programming language to implement, test, and debug algorithms for solving simple problems",
+                "Summarize the evolution of programming languages illustrating how this history has led to the paradigms available today",
+                "Demonstrate different forms of binding, visibility, scoping, and lifetime management"
+            ]
+        },
+        "Evaluation Methods": {
+            "May include any or all of": [
+                "Exams",
+                "Quizzes",
+                "Programming Projects",
+                "Discussions",
+                "Class Presentations"
+            ]
+        },
+        "Textbooks": [
+            "Savitch, Walter: Problem Solving with C++ Latest Edition"
+        ]
+    },
+    "COMP132": {
+        "descriptor": {
+            "title": "Programming Concepts and Methodology II",
+            "C-ID Number": 132
+        }
+    },
+    "COMP142": {
+        "descriptor": {
+            "title": "Computer Architecture and Organization",
+            "C-ID Number": 142
+        }
+    },
+    "COMP152": {
+        "descriptor": {
+            "title": "Discrete Structures",
+            "C-ID Number": 152
+        }
+    }
+}
