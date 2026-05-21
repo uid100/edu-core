@@ -1,0 +1,151 @@
+<div id="top"> </div>
+<div class="container my-4 px-2">
+    <div class="card mb-3"> <!-- .card overview -->
+        <div class="card-header">
+            <button class="btn btn-link text-decoration-none text-dark fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#overview" aria-expanded="true"
+                aria-controls="overview">
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+                <span class="icon"><i class="fas fa-chevron-up"></i></span>
+                UML Class Diagram Overview
+            </button>
+        </div> <!-- .card-header -->
+        <div id="overview" class="collapse show">
+            <div class="card-body">
+                <h3>Understanding the 3-Section UML Class Diagram</h3>
+                <p>
+                    Unified Modeling Language (UML) is a standardized way to visualize software and and other 
+                    engineering systems. One common diagram you'll see is the Class Diagram.                             
+                </p>
+                <h2>What is a UML Class Diagram?</h2>
+                <p>
+                    A UML class diagram shows the structure of a class: its name, its attributes (fields), and its 
+                    operations (methods). It's a powerful tool for planning and understanding your code.
+                </p>
+            </div> <!-- .card-body -->
+        </div> <!-- .collapse -->
+    </div> <!-- .card (overview) -->
+
+    <div class="card mb-3"> <!-- .card content -->
+        <div class="card-header">
+            <button class="btn btn-link text-decoration-none text-dark fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#content" aria-expanded="true"
+                aria-controls="content">
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+                <span class="icon"><i class="fas fa-chevron-up"></i></span>
+                Class Diagram Content
+            </button>
+        </div> <!-- .card-header -->
+        <div id="content" class="collapse show">
+            <div class="card-body">
+                <h3>The 3 Sections of a UML Class Box</h3>
+                <p>
+                    Each UML class box is divided into three sections from top to bottom:
+                </p>
+                <ol>
+                    <li><strong>Class Name</strong>: The name of the class is at the top.</li>
+                    <li><strong>Attributes</strong>: The middle section lists the properties or fields of the class.</li>
+                    <li><strong>Methods</strong>: The bottom section lists the functions or methods that the class can perform.</li>
+                </ol>
+                <pre><code>
+---------------------------
+|       ClassName         |  ← Class name section
+---------------------------
+| - field1: Type          |  ← Attribute/Field section
+| - field2: Type          |
+---------------------------
+| + Method1(): ReturnType |  ← Method/Operation section
+| + Method2(param: Type)  |
+---------------------------
+                </code></pre>
+
+
+                <h3>Top Section – Class Name</h3>
+                <ul>
+                    <li>Contains the <strong>name of the class</strong></li>
+                    <li>Should be <strong>capitalized</strong> (e.g., <code>Student</code>, <code>Car</code>)</li>
+                    <li>Abstract classes may be shown in <em>italic</em></li>
+                </ul>
+
+                <h3>Middle Section – Attributes (Fields)</h3>
+                <ul>
+                    <li>Lists the <strong>data members</strong> or <strong>fields</strong></li>
+                    <li>Each field includes:
+                    <ul>
+                        <li><strong>Visibility symbol</strong> (<code>-</code> for private, <code>+</code> for public, <code>#</code> for protected)</li>
+                        <li><strong>Field name</strong></li>
+                        <li><strong>Colon</strong> <code>:</code> followed by the <strong>data type</strong></li>
+                    </ul>
+                    </li>
+                </ul>
+
+                <pre>
+- name: string
+- age: int</pre>
+
+                <h3>Bottom Section – Operations (Methods)</h3>
+                <ul>
+                    <li>Lists the <strong>methods</strong> or <strong>behaviors</strong> of the class</li>
+                    <li>Each method includes:
+                    <ul>
+                        <li><strong>Visibility symbol</strong></li>
+                        <li><strong>Method name</strong></li>
+                        <li><strong>Parameter list</strong> (if any)</li>
+                        <li><strong>Colon</strong> <code>:</code> and the return type</li>
+                    </ul>
+                    </li>
+                </ul>
+
+                <pre>
++ GetName(): string
++ SetAge(age: int): void</pre>
+
+                <h2>Access levels</h2>
+                <table style="width: 400px; margin: 0 auto; border-collapse: collapse;">
+                    <tr>
+                    <th>Symbol</th>
+                    <th>Meaning</th>
+                    <th>C# Keyword</th>
+                    </tr>
+                    <tr>
+                    <td>+</td>
+                    <td>public</td>
+                    <td><code>public</code></td>
+                    </tr>
+                    <tr>
+                    <td>-</td>
+                    <td>private</td>
+                    <td><code>private</code></td>
+                    </tr>
+                    <tr>
+                    <td>#</td>
+                    <td>protected</td>
+                    <td><code>protected</code></td>
+                    </tr>
+                </table>
+
+                <h2><code>static</code> or class members</h2>
+                <p>
+                    If a class member is <code>static</code>, it means it belongs to the class itself, not to any 
+                    specific instance of the class. In UML, you can indicate this by underlining the member name.
+                </p>
+                <p>Here is an example
+                    <img src="https://icarus.cs.weber.edu/~dab/cs1410/textbook/9.Classes_And_Objects/images/uml_static.png" 
+                    alt="UML static member example" />
+                </p>
+                <p>
+                    You can read more:
+                    <ul>
+                        <li><a href="https://www.uml-diagrams.org/class-diagrams.html#static-class-members" 
+                    target="_blank">here</a></li>
+                    <li><a href="https://icarus.cs.weber.edu/~dab/cs1410/textbook/9.Classes_And_Objects/static.html"
+                    target="_blank">and here.</a></li>
+
+                </p>
+                <h2>Example: UML Diagram for a <code>Book</code> Class</h2>
+
+                <img src="/course-content/images/Book_classDiagram.jpg" alt="Book class diagram" />"
+            </div> <!-- .card-body -->
+        </div> <!-- .collapse -->
+    </div> <!-- .card (content) -->
+</div> <!-- .container -->
