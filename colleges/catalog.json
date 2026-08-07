@@ -1,0 +1,41 @@
+"Cuyamaca College" : {
+    "Computer Science (CS)": {
+      "courseList": [
+        {
+          "courseCode": "CS 119",
+          "courseName": "PROGRAM DESIGN AND DEVELOPMENT",
+          "units": 3,
+          "lectureHours": 3,
+          "labHours": 3,
+          "prerequisites": ["CIS 110"],
+          "corequisites": ["CS 119L"]
+        },
+        {
+          "courseCode": "CS 119L",
+          "courseName": "PROGRAM DESIGN AND DEVELOPMENT LAB",
+          "units": 1,
+          "lectureHours": 0,
+          "labHours": 3,
+          "prerequisites": [],
+          "corequisites": ["CS 119"]
+        },
+        {
+          "courseCode": "CS 165",
+          "courseName": "ASSEMBLY LANGUAGE AND MACHINE ARCHITECTURE",
+          "units": 4,
+          "lectureHours": 3,
+          "labHours": 3,
+          "prerequisites": "CS 181 or CS 182 or C/C++ or Java programming experience"
+        },
+        {
+          "courseCode": "CS 181",w
+          "courseName": "INTRODUCTION TO C++ PROGRAMMING",
+          "units": 3,
+          "lectureHours": 3,
+          "labHours": 0,
+          "prerequisites": ["CS 119"]
+        }
+      ]
+    }
+  },
+  "San Diego Mesa College" : {
