@@ -165,6 +165,7 @@ async function render() {
     setText("discord-link", data.course.contact?.discordLink?.label || "Discord");
 
     if (window.renderTimeline) {
+        console.log("Rendering timeline from", data.section.dates.start, "to", data.section.dates.end);
         renderTimeline(data.section.dates.start, data.section.dates.end);
     }
 
