@@ -26,7 +26,9 @@ export async function loadCourseConfig(courseId) {
 
     // console.log('load section data');
     // Load section
-    const section = await fetchJSON(courseBase + `sections/${course.defaultSection}.json`);
+    const params = new URLSearchParams(window.location.search);
+    const section = await fetchJSON(courseBase + `sections/${params.get("section") || course.defaultSection}.json`);
+    
 
     // console.log('load textbook info');
     // Load textbook
